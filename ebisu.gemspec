@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Ebisu::VERSION
   s.authors     = ["rainbowaffro"]
   s.email       = ["akihito.tsuboi@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Ebisu."
-  s.description = "TODO: Description of Ebisu."
+  s.homepage    = "http://next-ship.net"
+  s.summary     = "Rails CMS Project"
+  s.description = "Rails CMS Project"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
