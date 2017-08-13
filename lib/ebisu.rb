@@ -1,5 +1,5 @@
 require "ebisu/engine"
+require "slim-rails"
 
 module Ebisu
-  # Your code goes here...
 end
