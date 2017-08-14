@@ -1,2 +1,4 @@
 - @articles.each do |article|
-  p= @article.inspect
+  .article
+    - article.paragraphs.each do |paragraph|
+      p= paragraph.content
