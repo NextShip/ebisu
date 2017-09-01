@@ -1,0 +1,11 @@
+body.categories.index {
+  @import 'article_module-sp';
+  .content-wrapper {
+    margin: 0 10px;
+  }
+}
+
+body.categories.show {
+  @import 'article_module-sp';
+}
+

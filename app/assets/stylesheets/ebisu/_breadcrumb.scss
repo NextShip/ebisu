@@ -1,0 +1,37 @@
+.breadcrumb {
+  height: 30px;
+  border-bottom: 2px solid #eee;
+  .breadcrumb-inner {
+    width: 1010px;
+    margin: 0 auto;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        &.top {
+          margin-right: 4px;
+        }
+        &.category {
+          margin-left: 4px;
+          margin-right: 4px;
+        }
+        span {
+          font-size: 13px;
+          color: $atag-color;
+        }
+        img {
+          height: 28px;
+        }
+      }
+      strong {
+        font-size: 13px;
+        max-width: 320px;
+        white-space: nowrap;
+        overflow: hidden;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

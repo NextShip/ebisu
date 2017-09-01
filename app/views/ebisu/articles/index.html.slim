@@ -1,4 +1,50 @@
-- @articles.each do |article|
-  .article
-    - article.paragraphs.each do |paragraph|
-      p= paragraph.content
+section.eyecatch
+  .eyecatch-in
+    .eyecatch-content
+      = image_tag("/ebisu/no-image.jpg", class: 'eyecatch-image')
+      h3.eyecatch-title
+        |eyecatch-title 1
+      .eyecatch-desc
+        | description 1
+      .eyecatch-info
+        .eyecatch-user
+          | Ebisu
+    .eyecatch-content
+      | image 2
+      h3.eyecatch-title
+        |eyecatch-title 2
+      .eyecatch-desc
+        | description 2
+      .eyecatch-info
+        .eyecatch-user
+          | Ebisu
+section.content
+  .content-wrapper
+    = render 'shared/category'
+    .articles
+      .articles-title
+        h2 Pick up
+      ul
+        li.article
+          .article-image
+            | image 1
+          .article-text
+            p.article-title
+              | article.title 1
+            p.article-desc
+              | article.description 1
+            p.article-info
+              | Ebisu
+        li.article
+          .article-image
+            | image 2
+          .article-text
+            p.article-title
+              | article.title 2
+            p.article-desc
+              | article.description 2
+            p.article-info
+              | Ebisu
+              
+    .sidebar
+      = render "shared/sidebar"
