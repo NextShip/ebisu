@@ -1,0 +1,54 @@
+.articles {
+  width: 510px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 20px;
+  .articles-title {
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    h2 {
+      margin-bottom: 6px;
+    }
+  }
+  .article {
+    display: table;
+    padding: 10px 0;
+    border-bottom: 1px dotted #e7e7e7;
+    .article-image {
+      display: table-cell;
+      vertical-align: middle;
+      .thumbnail {
+        width: 75px;
+        height: 75px;
+      }
+    }
+    .article-text {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      padding-left: 10px;
+      .article-title {
+        a {
+          display: block;
+          font-size: 16px;
+          color: $atag-color;
+          >:visited {
+            color: $atag-color;
+          }
+        }
+      }
+      .article-desc {
+        font-size: 11px;
+        color: $gray-text;
+      }
+      .article-info {
+        font-size: 11px;
+        color: $gray-text;
+        .number {
+          font-weight: 700px;
+        }
+      }
+    }
+  }
+}

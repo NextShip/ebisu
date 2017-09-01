@@ -1,0 +1,66 @@
+footer {
+  .footer-wrapper {
+    width: 1010px;
+    margin: 0 auto;
+    height: 200px;
+    border-top: 1px solid #eee;
+    .footer-content {
+      margin-top: 15px;
+      .footer-brand {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 30px;
+        .footer-logo {
+          width: 105px;
+          height: 105px;
+        }
+      }
+      .footer-column {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 30px;
+	.footer-title {
+          font-size: 12px;
+	  color: $gray-text;
+	  margin-bottom: 15px;
+        }
+	.footer-list {
+	  display: inline-block;
+	  vertical-align: top;
+	}
+	ul > li > a {
+	  margin-right: 30px;
+	  font-size: 12px;
+	  color: $atag-color;
+	  &>visited {
+	    color: $atag-color;
+	  }
+	}
+      }
+    }
+  }
+  .footer-copyright {
+    border-top: 1px solid #eee;
+    .footer-copyright-wrapper {
+      width: 1010px;
+      margin: 0 auto;
+      height: 46px;
+      line-height: 46px;
+      .desc {
+        display: inline-block;
+	vertical-align: middle;
+        font-size: 11px;
+        color: $gray-text;
+	float: left;
+        
+      }
+      .copyright {
+        display: inline-block;
+	vertical-align: middle;
+        font-size: 11px;
+        color: $gray-text;
+        float: right;
+      }
+    }
+  }
+}
