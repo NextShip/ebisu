@@ -1,0 +1,14 @@
+header
+  .nav-wrapper
+    .nav
+      .search
+        form.search-form( action='/search' method='get' )
+          input(type='text' placeholder='気になるワードを入力' class='search-input' name='q')
+          input(type='submit' placeholder='気になるワードを入力' class='search-btn' value)
+      .menu
+        ul
+          li
+            a(href='/users/sign_up' rel='nofollow')
+              無料会員登録
+            a(href='/users/sign_in' rel='nofollow')
+              ログイン
