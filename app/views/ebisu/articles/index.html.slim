@@ -1,7 +1,7 @@
 section.eyecatch
   .eyecatch-in
     .eyecatch-content
-      = image_tag("/ebisu/no-image.jpg", class: 'eyecatch-image')
+      = image_tag("ebisu/no-image.jpg", class: 'eyecatch-image')
       h3.eyecatch-title
         |eyecatch-title 1
       .eyecatch-desc
@@ -10,7 +10,7 @@ section.eyecatch
         .eyecatch-user
           | Ebisu
     .eyecatch-content
-      | image 2
+      = image_tag("ebisu/no-image.jpg", class: 'eyecatch-image')
       h3.eyecatch-title
         |eyecatch-title 2
       .eyecatch-desc
@@ -27,7 +27,7 @@ section.content
       ul
         li.article
           .article-image
-            | image 1
+            = image_tag("ebisu/no-image.jpg", class: 'thumbnail')
           .article-text
             p.article-title
               | article.title 1
@@ -37,7 +37,7 @@ section.content
               | Ebisu
         li.article
           .article-image
-            | image 2
+            = image_tag("ebisu/no-image.jpg", class: 'thumbnail')
           .article-text
             p.article-title
               | article.title 2
