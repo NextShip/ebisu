@@ -1,4 +1,5 @@
 Ebisu::Engine.routes.draw do
+  root 'articles#index'
   resources :articles, only: [:index]
 
   if Rails.env.development?
