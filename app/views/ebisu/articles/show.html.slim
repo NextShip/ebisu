@@ -1,0 +1,7 @@
+
+= image_tag @article.image.url
+h1 =@article.title
+p =@article.description
+
+- @article.paragraphs.rank(:position).each do |paragraph|
+  = paragraph.content

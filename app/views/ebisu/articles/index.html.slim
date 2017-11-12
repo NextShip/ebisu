@@ -25,26 +25,18 @@ section.content
       .articles-title
         h2 Pick up
       ul
-        li.article
-          .article-image
-            = image_tag("ebisu/no-image.jpg", class: 'thumbnail')
-          .article-text
-            p.article-title
-              | article.title 1
-            p.article-desc
-              | article.description 1
-            p.article-info
-              | Ebisu
-        li.article
-          .article-image
-            = image_tag("ebisu/no-image.jpg", class: 'thumbnail')
-          .article-text
-            p.article-title
-              | article.title 2
-            p.article-desc
-              | article.description 2
-            p.article-info
-              | Ebisu
+        - @articles.each do |article|
+          = link_to article_path(article)
+            li.article
+              .article-image
+                = image_tag article.image.url, class: 'thumbnail'
+              .article-text
+                p.article-title
+                  = article.title
+                p.article-desc
+                  = article.description
+                / p.article-info
+                  =
               
     .sidebar
       = render "shared/sidebar"
