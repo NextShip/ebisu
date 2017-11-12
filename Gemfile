@@ -13,3 +13,5 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 gem 'rails_admin'
+
+gem 'dragonfly', '~> 1.1.3'
