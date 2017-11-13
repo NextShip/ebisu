@@ -4,4 +4,4 @@ h1 =@article.title
 p =@article.description
 
 - @article.paragraphs.rank(:position).each do |paragraph|
-  = paragraph.content
+  = paragraph.decorate.content

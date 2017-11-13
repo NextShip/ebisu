@@ -16,3 +16,4 @@ gem 'rails_admin'
 
 gem 'dragonfly', '~> 1.1.3'
 gem 'ranked-model'
+gem 'draper'

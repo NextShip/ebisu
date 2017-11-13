@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails_admin"
   s.add_dependency "dragonfly", "~> 1.1.3"
   s.add_dependency "ranked-model"
+  s.add_dependency "draper"
 
   s.add_development_dependency "sqlite3"
 end
