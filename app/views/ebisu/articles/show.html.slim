@@ -1,7 +1,14 @@
 
-= image_tag @article.image.url
-h1 =@article.title
-p =@article.abstract
+.contents-wrapper
+  section.articles
+    = image_tag @article.image.url
+    h1 =@article.title
+    p =@article.abstract
+    
+    - @article.paragraphs.rank(:position).each do |paragraph|
+      = paragraph.decorate.content
 
-- @article.paragraphs.rank(:position).each do |paragraph|
-  = paragraph.decorate.content
+  aside.sidebar
+    = render 'shared/ebisu/sidebar'
+
+.clearfix
