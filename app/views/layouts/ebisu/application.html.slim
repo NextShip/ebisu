@@ -7,7 +7,7 @@ html
     = stylesheet_link_tag    'ebisu/application', media: 'all'
     = javascript_include_tag 'ebisu/application'
   body class=[controller_path.sub('/', '-'), action_name]
-    = render 'shared/header'
+    = render 'shared/ebisu/header'
     .main
       = yield
-    = render 'shared/footer'
+    = render 'shared/ebisu/footer'
