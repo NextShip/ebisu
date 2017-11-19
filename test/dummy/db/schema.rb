@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105065555) do
+ActiveRecord::Schema.define(version: 20171113042621) do
 
   create_table "ebisu_articles", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.text "abstract"
     t.string "image"
     t.integer "category_id"
     t.datetime "published_at"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20171105065555) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ebisu_headers", force: :cascade do |t|
+  create_table "ebisu_headlines", force: :cascade do |t|
     t.integer "paragraph_id"
     t.string "content"
     t.datetime "created_at", null: false
