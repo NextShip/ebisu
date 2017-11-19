@@ -1,6 +1,28 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'category_module';
+@import 'article_module';
+
+.contents-wrapper {
+  display: float;
+}
+
+.category {
+  float: left;
+  width: 10%;
+}
+
+.sidebar {
+  float: right;
+  width: 20%;
+}
+
+.clearfix {
+  clear: both;
+}
+
 body.ebisu-articles.index, body.ebisu-articles.pickup, body.ebisu-articles.latest, body.ebisu-articles.search {
   .eyecatch {
     background-color: $gray-light-color;
@@ -25,7 +47,7 @@ body.ebisu-articles.index, body.ebisu-articles.pickup, body.ebisu-articles.lates
           color: $atag-color;
           font-size: 16px;
         }
-        .eyecatch-desc {
+        .eyecatch-abst {
           padding: 0 10px;
           height: 32px;
           font-size: 11px;
@@ -62,16 +84,6 @@ body.ebisu-articles.index, body.ebisu-articles.pickup, body.ebisu-articles.lates
       .eyecatch-content:nth-child(2) {
         margin: 0 25px;
       }
-    }
-  }
-  .content {
-    .content-wrapper {
-      width: 1010px;
-      margin: 0 auto;
-      margin-top: 20px;
-      height: 100%;
-      @import 'category_module';
-      @import 'article_module';
     }
   }
 }
@@ -121,7 +133,7 @@ body.articles.show {
           margin-bottom: 12px;
           -webkit-font-smoothing: antialiased;
         }
-        .article-desc {
+        .article-abst {
           font-size: 12px;
           color: $gray-dark-text;
         }

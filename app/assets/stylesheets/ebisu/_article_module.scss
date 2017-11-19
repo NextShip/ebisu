@@ -7,9 +7,7 @@
     font-size: 16px;
     font-weight: 700;
     border-bottom: 1px solid #eee;
-    h2 {
-      margin-bottom: 6px;
-    }
+    margin-bottom: 6px;
   }
   .article {
     display: table;
@@ -18,10 +16,10 @@
     .article-image {
       display: table-cell;
       vertical-align: middle;
-      .thumbnail {
-        width: 75px;
-        height: 75px;
-      }
+    }
+    .thumbnail {
+      width: 75px;
+      height: 75px;
     }
     .article-text {
       display: table-cell;
@@ -29,16 +27,15 @@
       width: 100%;
       padding-left: 10px;
       .article-title {
-        a {
-          display: block;
-          font-size: 16px;
+        display: block;
+        font-size: 16px;
+        margin: 0;
+        color: $atag-color;
+        >:visited {
           color: $atag-color;
-          >:visited {
-            color: $atag-color;
-          }
         }
       }
-      .article-desc {
+      .article-abst {
         font-size: 11px;
         color: $gray-text;
       }
