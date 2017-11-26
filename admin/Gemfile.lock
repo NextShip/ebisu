@@ -4,6 +4,7 @@ PATH
     admin (0.1.0)
       gentelella-rails
       rails (~> 5.1.4)
+      sass-rails
 
 GEM
   remote: https://rubygems.org/
