@@ -16,3 +16,4 @@ gemspec
 gem 'dragonfly', '~> 1.1.3'
 gem 'ranked-model'
 gem 'draper'
+gem 'admin', path: 'admin'
