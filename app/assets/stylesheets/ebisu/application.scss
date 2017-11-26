@@ -11,47 +11,47 @@
  * It is generally better to create a new file per style scope.
  *= require_self
  */
-@import 'sanitize.scss';
-@import 'variables';
+@import 'partials/sanitize';
+@import 'partials/variables';
 
 
 @media (max-width: 415px) {
-  @import 'header-sp';
-  @import 'footer-sp';
-  @import 'sidebar-sp';
-  @import 'articles-sp';
-  @import 'categories-sp';
-  @import 'contact-sp';
-  @import 'about-sp';
+  @import 'partials/header-sp';
+  @import 'partials/footer-sp';
+  @import 'partials/sidebar-sp';
+  @import 'partials/articles-sp';
+  @import 'partials/categories-sp';
+  @import 'partials/contact-sp';
+  @import 'partials/about-sp';
 }
 @media (max-width: 767px) and (min-width: 416px) {
-  @import 'header-sp';
-  @import 'footer-sp';
-  @import 'sidebar-sp';
-  @import 'articles-sp';
-  @import 'categories-sp';
-  @import 'contact-sp';
-  @import 'about-sp';
+  @import 'partials/header-sp';
+  @import 'partials/footer-sp';
+  @import 'partials/sidebar-sp';
+  @import 'partials/articles-sp';
+  @import 'partials/categories-sp';
+  @import 'partials/contact-sp';
+  @import 'partials/about-sp';
 }
 @media (max-width: 1024px) and (min-width: 768px) {
-  @import 'header';
-  @import 'footer';
-  @import 'sidebar';
-  @import 'breadcrumb';
-  @import 'articles';
-  @import 'contact';
-  @import 'about';
-  @import 'categories';
+  @import 'partials/header';
+  @import 'partials/footer';
+  @import 'partials/sidebar';
+  @import 'partials/breadcrumb';
+  @import 'partials/articles';
+  @import 'partials/contact';
+  @import 'partials/about';
+  @import 'partials/categories';
 }
 @media (min-width: 1024px) {
-  @import 'header';
-  @import 'footer';
-  @import 'sidebar';
-  @import 'breadcrumb';
-  @import 'articles';
-  @import 'contact';
-  @import 'about';
-  @import 'categories';
+  @import 'partials/header';
+  @import 'partials/footer';
+  @import 'partials/sidebar';
+  @import 'partials/breadcrumb';
+  @import 'partials/articles';
+  @import 'partials/contact';
+  @import 'partials/about';
+  @import 'partials/categories';
 }
 
 body {
