@@ -5,5 +5,13 @@ module Admin
     def index
       @articles = Ebisu::Article.all
     end
+
+    def show
+      @article = Ebisu::Article.find(params[:id])
+    end
+
+    def new
+      @article = Ebisu::Article.new
+    end
   end
 end

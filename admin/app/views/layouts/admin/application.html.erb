@@ -6,13 +6,17 @@
   <%= javascript_include_tag "admin/application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="nav-md">
   <div class="container body">
     <div class="main_container">
-      <%= render 'admin/shared/sidebar'%>
-      <%= render 'admin/shared/header'%>
-      <%= yield %>
-      <%= render 'admin/shared/footer'%>
+      <div class="col-md-3 left_col">
+        <%= render 'admin/shared/sidebar'%>
+      </div>
+      <div class="right_col" role="main" style="min-height: 2000px;">
+        <%= render 'admin/shared/header'%>
+        <%= yield %>
+        <%= render 'admin/shared/footer'%>
+      </div>
     </div>
   </div>
 
