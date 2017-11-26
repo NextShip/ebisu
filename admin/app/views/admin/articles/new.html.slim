@@ -1,16 +1,14 @@
 .row
   h1= 'New Article'
-  p= 'Under construction.'
-  = form_with model: @article do |form|
+  = form_with model: @article, url: articles_path do |form|
     .form-group
       = form.label 'title'
       = form.text_field :title
     .form-group
       = form.label 'abstract'
       = form.text_area :abstract
-  nav
-    ol
-      li
-        | Headline
-      li
-        | Paragraph
+    = form.fields_for :paragraphs do |f|
+      = f.object.delegate.model_name.name
+      = f.hidden_field :type, value: f.object.type
+      = render "#{f.object.type.underscore}_form", form: f
+    = form.submit

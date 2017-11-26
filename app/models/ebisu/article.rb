@@ -4,23 +4,21 @@ module Ebisu
     dragonfly_accessor :image
     has_many :paragraphs
 
+    accepts_nested_attributes_for :paragraphs
+
     # validations
-    validates :title, presence: true
-    validates :abstract, presence: true
-    validates :image, presence: true
+    # validates :title, presence: true
+    # validates :abstract, presence: true
+    # validates :image, presence: true
 
     def self.toparticles()
       self.all.take(3)
     end
 
-    def build_headline(params = {})
-      headline = Headline.new(content: params[:content])
-      paragraphs.build(type: "Ebisu::Paragraph::Headline", headline: headline, position: params[:position])
-    end
-
-    def build_body(params = {})
-      body = Body.new(content: params[:content])
-      paragraphs.build(type: "Ebisu::Paragraph::Body", body: body, position: params[:position])
+    def build_paragraph(params = {})
+      paragraph = paragraphs.build(type: params[:type], position: params[:position]) 
+      paragraph&.build_delegate(content: params[:content])
+      paragraph
     end
   end
 end
