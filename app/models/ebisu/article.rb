@@ -1,6 +1,6 @@
 module Ebisu
   class Article < ApplicationRecord
-  	# associations
+    # associations
     dragonfly_accessor :image
     has_many :paragraphs
 
