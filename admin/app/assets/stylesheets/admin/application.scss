@@ -16,3 +16,13 @@
 
 @import "gentelella";
 @import "gentelella-custom";
+
+body {
+  .left_col {
+    .navbar a  {
+      img {
+        width: 160px;
+      }
+    }
+  }
+}
