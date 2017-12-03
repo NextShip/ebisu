@@ -59,5 +59,7 @@ javascript:
           = f.hidden_field :type, value: f.object.type
           = f.hidden_field :position, value: f.object.position, class: 'position'
           = render "#{f.object.type.underscore}_form", form: f
+          button type="button" onclick="$(this).closest('.form-group').remove();"
+            | Delete
     .form-group
       = form.submit "Submit", class: "btn btn-success"
