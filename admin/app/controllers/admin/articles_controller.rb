@@ -20,7 +20,7 @@ module Admin
       @article = Ebisu::Article.new(article_params)
 
       params[:article][:paragraphs_attributes].each do |index, attributes|
-        attributes[:position] = index
+        next if index.to_i < 0
         @article.build_paragraph(attributes)
       end
 
