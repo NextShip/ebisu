@@ -1,0 +1,4 @@
+.form-group
+  = form.hidden_field :type, value: type
+  = form.hidden_field :position, class: "position"
+  = render "#{type.underscore}_form", form: form

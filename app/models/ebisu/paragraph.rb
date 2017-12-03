@@ -4,7 +4,7 @@ module Ebisu
 
     # associations
     belongs_to :article
-    ranks :position
+    ranks :position, class_name: 'Ebisu::Paragraph'
 
     # validations
     validates :position, presence: true

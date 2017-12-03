@@ -1,4 +1,5 @@
 .row
   h1= @article.title
+  p= @article.abstract
   - @article.paragraphs.rank(:position).each do |paragraph|
   	= paragraph.decorate.content
