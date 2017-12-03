@@ -7,6 +7,6 @@ module Ebisu
     ranks :position
 
     # validations
-    # validates :position, presence: true
+    validates :position, presence: true
   end
 end

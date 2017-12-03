@@ -7,8 +7,8 @@ module Ebisu
     accepts_nested_attributes_for :paragraphs
 
     # validations
-    # validates :title, presence: true
-    # validates :abstract, presence: true
+    validates :title, presence: true
+    validates :abstract, presence: true
     # validates :image, presence: true
 
     def self.toparticles()

@@ -1,6 +1,6 @@
 .row
   h1= 'New Article'
-  = form_with model: @article, url: articles_path do |form|
+  = form_for @article do |form|
     .form-group
       = form.label 'title'
       = form.text_field :title
@@ -8,7 +8,9 @@
       = form.label 'abstract'
       = form.text_area :abstract
     = form.fields_for :paragraphs do |f|
-      = f.object.delegate.model_name.name
-      = f.hidden_field :type, value: f.object.type
-      = render "#{f.object.type.underscore}_form", form: f
-    = form.submit
+      .form-group
+        = f.object.delegate.model_name.name
+        = f.hidden_field :type, value: f.object.type
+        = render "#{f.object.type.underscore}_form", form: f
+    .form-group
+      = form.submit "Submit", class: "btn btn-success"

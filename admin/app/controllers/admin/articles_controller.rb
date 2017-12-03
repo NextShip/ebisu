@@ -12,8 +12,8 @@ module Admin
 
     def new
       @article = Ebisu::Article.new
-      @article.build_headline
-      @article.build_body
+      @article.build_paragraph(type: "Ebisu::Paragraph::Headline")
+      @article.build_paragraph(type: "Ebisu::Paragraph::Body")
     end
 
     def create
@@ -25,9 +25,10 @@ module Admin
       end
 
       if @article.save
-        render article_path(@article)
+        redirect_to @article
       else
-        redirect_to :new
+        flash.now[:alert] = @article.errors.full_messages.join(' ')
+        render :new
       end
     end
 
