@@ -5,6 +5,7 @@ require 'ranked-model'
 require 'draper'
 require 'devise'
 require 'rolify'
+require 'pundit'
 
 module Ebisu
 end
