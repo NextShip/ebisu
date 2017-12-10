@@ -3,7 +3,7 @@ module Ebisu
     include RankedModel
 
     # associations
-    has_one :delegate
+    has_one :delegate, dependent: :destroy
     belongs_to :article
     ranks :position, class_name: 'Ebisu::Paragraph'
 
