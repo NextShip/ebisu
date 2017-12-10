@@ -4,7 +4,7 @@ module Ebisu
     dragonfly_accessor :image do
       default Rails.root.join('public', 'images', 'no-image.jpg')
     end
-    has_many :paragraphs
+    has_many :paragraphs, dependent: :destroy
 
     accepts_nested_attributes_for :paragraphs, allow_destroy: true
 
@@ -17,10 +17,7 @@ module Ebisu
     end
 
     def build_paragraph(params = {})
-      p params
-      paragraph = paragraphs.build(type: params[:type], position: params[:position], delegate_attributes: { content: params[:content] })
-      p "hohohoh"
-      paragraph
+      paragraphs.build(type: params[:type], position: params[:position], delegate_attributes: { content: params[:content] })
     end
   end
 end

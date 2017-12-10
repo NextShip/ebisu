@@ -5,3 +5,16 @@
     = paragraph.decorate.content
   = link_to edit_article_path(@article)
     i.fa.fa-edit
+  button.btn.btn-link data-toggle="modal" data-target="#delete_confirmation"
+    i.fa.fa-trash
+
+.modal.fade#delete_confirmation
+  .modal-dialog
+    .modal-content
+      .modal-body
+        h2 この記事を削除してもよろしいですか？
+      .modal-footer
+        = link_to article_path(@article), method: :delete, class: "btn btn-danger"
+          | はい
+        button.btn.btn-default type="button" data-dismiss="modal"
+          | いいえ

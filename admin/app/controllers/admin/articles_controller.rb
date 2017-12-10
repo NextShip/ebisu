@@ -46,6 +46,16 @@ module Admin
       end
     end
 
+    def destroy
+      @article = Ebisu::Article.find(params[:id])
+      if @article.destroy
+        redirect_to articles_path
+      else
+        flash.now[:alert] = @article.errors.full_messages
+        redirect_to @article
+      end
+    end
+
     private
     def article_params
       params.require(:article).permit(:title, :abstract, :image, paragraphs_attributes: [:type, :position, :id, :_destroy, delegate_attributes: [ :content, :id ]])
