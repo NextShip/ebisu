@@ -7,8 +7,8 @@ require "ebisu/version"
 Gem::Specification.new do |s|
   s.name        = "ebisu"
   s.version     = Ebisu::VERSION
-  s.authors     = ["rainbowaffro"]
-  s.email       = ["akihito.tsuboi@gmail.com"]
+  s.authors     = ["rainbowaffro", "Taichi Tomioka"]
+  s.email       = ["akihito.tsuboi@gmail.com", "mys.itachi@gmail.com"]
   s.homepage    = "http://next-ship.net"
   s.summary     = "Rails CMS Project"
   s.description = "Rails CMS Project"
@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
+  s.add_dependency "ebisu_admin"
   s.add_dependency "rails", "~> 5.1.3"
   s.add_dependency 'sass-rails', '~> 5.0'
   s.add_dependency "slim-rails"

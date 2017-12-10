@@ -6,6 +6,7 @@ require 'draper'
 require 'devise'
 require 'rolify'
 require 'pundit'
+require 'ebisu_admin'
 
 module Ebisu
 end

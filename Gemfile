@@ -13,7 +13,4 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
-gem 'dragonfly', '~> 1.1.3'
-gem 'ranked-model'
-gem 'draper'
-gem 'admin', path: 'admin'
+gem 'ebisu_admin', path: 'ebisu_admin'

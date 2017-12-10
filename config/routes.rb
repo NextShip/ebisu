@@ -1,4 +1,4 @@
 Ebisu::Engine.routes.draw do
-  mount Admin::Engine, at: "/ebisu/admin"
+  mount EbisuAdmin::Engine, at: "/ebisu_admin"
   resources :articles, only: [:index, :show]
 end
