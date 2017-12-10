@@ -2,4 +2,6 @@
   h1= @article.title
   p= @article.abstract
   - @article.paragraphs.rank(:position).each do |paragraph|
-  	= paragraph.decorate.content
+    = paragraph.decorate.content
+  = link_to edit_article_path(@article)
+    i.fa.fa-edit

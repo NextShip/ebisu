@@ -4,7 +4,7 @@ module Ebisu
     dragonfly_accessor :image
     has_many :paragraphs
 
-    accepts_nested_attributes_for :paragraphs
+    accepts_nested_attributes_for :paragraphs, allow_destroy: true
 
     # validations
     validates :title, presence: true
@@ -16,8 +16,9 @@ module Ebisu
     end
 
     def build_paragraph(params = {})
-      paragraph = paragraphs.build(type: params[:type], position: params[:position]) 
-      paragraph&.build_delegate(content: params[:content])
+      p params
+      paragraph = paragraphs.build(type: params[:type], position: params[:position], delegate_attributes: { content: params[:content] })
+      p "hohohoh"
       paragraph
     end
   end

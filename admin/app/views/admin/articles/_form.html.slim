@@ -1,0 +1,69 @@
+javascript:
+  var form_id = 0;
+  function add_form(elm) {
+    var new_elm = elm.clone();
+    new_elm.id = '';
+    rename_name_and_id_of_descendants(new_elm, form_id);
+    form_id += 1;
+    new_elm.show();
+    $("#paragraphs").append(new_elm);
+
+    update_positions();
+  }
+  function rename_name_and_id_of_descendants(elm, id) {
+    if (elm.id) {
+      elm.id = elm.id.replace(/-13869948/g, form_id);
+    }
+    if (elm.name) {
+      elm.name = elm.name.replace(/-13869948/g, form_id);
+    }
+
+    $(elm).children().each(function(idx, e) { rename_name_and_id_of_descendants(e, id); });
+  }
+  function update_positions() {
+    var paragraphs = $('#paragraphs');
+    var index = 0;
+
+    paragraphs.children('.form-group').each(function(idx, elm) {
+      var pos = $(elm).find('.position');
+      pos.attr('value', index);
+      index++;
+    })
+  }
+  function destroy_form(elm) {
+    $(elm).hide();
+    $(elm).find('._destroy').val(true);
+  }
+
+  window.addEventListener('load', () => { form_id = $('#number-of-paragraphs').attr('value'); update_positions(); });
+
+#number-of-paragraphs value=article.paragraphs.size
+= form_for article do |form|
+  .form-group
+    = form.label 'title'
+    = form.text_field :title
+  .form-group
+    = form.label 'abstract'
+    = form.text_area :abstract
+  .link
+    button type="button" onclick="add_form($('#headline-template').find('.form-group').first())"
+      | Headline
+    button type="button" onclick="add_form($('#body-template').find('.form-group').first())"
+      | Body
+  = form.fields_for :paragraphs_attributes, index: -13869948, readonly: true do |f|
+    #headline-template style="display: none;"
+      = render "template_form", type: "Ebisu::Paragraph::Headline", form: f
+    #body-template style="display: none;"
+      = render "template_form", type: "Ebisu::Paragraph::Body", form: f
+  #paragraphs
+    = form.fields_for :paragraphs do |f|
+      .form-group
+        = f.hidden_field :_destroy, value: false, class: :_destroy
+        = f.hidden_field :type, value: f.object.type
+        = f.hidden_field :position, value: f.object.position, class: 'position'
+        = f.fields_for :delegate do |f2|
+          = render "#{f.object.type.underscore}_form", form: f2
+        button type="button" onclick="destroy_form($(this).closest('.form-group'));"
+          | Delete
+  .form-group
+    = form.submit "Submit", class: "btn btn-success"
