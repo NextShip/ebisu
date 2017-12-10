@@ -17,12 +17,9 @@ module Admin
     end
 
     def create
-      @article = Ebisu::Article.new(article_params)
-
-      params[:article][:paragraphs_attributes].each do |index, attributes|
-        next if index.to_i < 0
-        @article.build_paragraph(attributes)
-      end
+      attributes = article_params
+      attributes[:paragraphs_attributes].select! { |index, attributes| index.to_i >= 0 }
+      @article = Ebisu::Article.new(attributes)
 
       if @article.save
         redirect_to @article
@@ -32,9 +29,26 @@ module Admin
       end
     end
 
+    def edit
+      @article = Ebisu::Article.find(params[:id])
+    end
+
+    def update
+      attributes = article_params
+      attributes[:paragraphs_attributes].select! { |index, attributes| index.to_i >= 0 }
+      @article = Ebisu::Article.find(params[:id])
+
+      if @article.update_attributes(attributes)
+        redirect_to @article
+      else
+        flash.now[:alert] = @article.errors.full_messages
+        render :edit
+      end
+    end
+
     private
     def article_params
-      params.require(:article).permit(:title, :abstract)
+      params.require(:article).permit(:title, :abstract, paragraphs_attributes: [:type, :position, :id, :_destroy, delegate_attributes: [ :content, :id ]])
     end
   end
 end
