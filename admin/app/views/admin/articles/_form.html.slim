@@ -45,6 +45,9 @@ javascript:
   .form-group
     = form.label 'abstract'
     = form.text_area :abstract
+  .form-group
+    = form.label :image
+    = form.file_field :image
   .link
     button type="button" onclick="add_form($('#headline-template').find('.form-group').first())"
       | Headline

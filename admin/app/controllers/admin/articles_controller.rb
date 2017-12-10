@@ -48,7 +48,7 @@ module Admin
 
     private
     def article_params
-      params.require(:article).permit(:title, :abstract, paragraphs_attributes: [:type, :position, :id, :_destroy, delegate_attributes: [ :content, :id ]])
+      params.require(:article).permit(:title, :abstract, :image, paragraphs_attributes: [:type, :position, :id, :_destroy, delegate_attributes: [ :content, :id ]])
     end
   end
 end
