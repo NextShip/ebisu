@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   devise_for :users
-  mount Ebisu::Engine => "/ebisu"
+  mount Ebisu::Engine => "/"
 end
