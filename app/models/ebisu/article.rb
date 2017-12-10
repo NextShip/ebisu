@@ -1,7 +1,9 @@
 module Ebisu
   class Article < ApplicationRecord
     # associations
-    dragonfly_accessor :image
+    dragonfly_accessor :image do
+      default Rails.root.join('public', 'images', 'no-image.jpg')
+    end
     has_many :paragraphs
 
     accepts_nested_attributes_for :paragraphs, allow_destroy: true
@@ -9,7 +11,6 @@ module Ebisu
     # validations
     validates :title, presence: true
     validates :abstract, presence: true
-    # validates :image, presence: true
 
     def self.toparticles()
       self.all.take(3)
