@@ -2,7 +2,7 @@ li.form-root
   .x_panel
     .x_title
       h2= type.constantize.model_name.human
-      ul.nav.navbar-right.panel_toolbox
+      ul.nav.navbar-right.panel_toolbox.for-valid
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" role="button"
             i.fa.fa-plus
@@ -21,7 +21,11 @@ li.form-root
             i.fa.fa-chevron-down
         li
           a onclick="destroy_form($(this).closest('.form-root'));"
-            i.fa.fa-trash
+            i.fa.fa-times
+      ul.nav.navbar-right.panel_toolbox.for-deleted style="display: none;"
+        li
+          a onclick="recover_form($(this).closest('.form-root'))"
+            i.fa.fa-history
       .clearfix
     .x_content
       .form-group
