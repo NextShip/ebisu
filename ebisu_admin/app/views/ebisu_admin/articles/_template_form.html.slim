@@ -8,11 +8,11 @@ li.form-root
             i.fa.fa-plus
             ul.dropdown-menu role="menu"
               li
-                a
-                  | hoge
+                a onclick="insert_after($(this).closest('.form-root'), $('#headline-template').children().first())"
+                  | Headline
               li
-                a
-                  | hoge1
+                a onclick="insert_after($(this).closest('.form-root'), $('#body-template').children().first())"
+                  | Body
         li
           a onclick="move_up($(this).closest('.form-root'));"
             i.fa.fa-chevron-up
@@ -25,6 +25,7 @@ li.form-root
       .clearfix
     .x_content
       .form-group
+        = form.hidden_field :id
         = form.hidden_field :_destroy, value: false, class: :_destroy
         = form.hidden_field :type, value: type
         = form.hidden_field :position, class: "position"

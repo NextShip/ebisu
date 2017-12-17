@@ -10,6 +10,16 @@ javascript:
 
     update_positions();
   }
+  function insert_after(prev, elm) {
+    var new_elm = elm.clone();
+    new_elm.id = '';
+    rename_name_and_id_of_descendants(new_elm, form_id);
+    form_id += 1;
+    new_elm.removeAttr('style');
+    $(prev).after(new_elm);
+
+    update_positions();
+  }
   function rename_name_and_id_of_descendants(elm, id) {
     if (elm.id) {
       elm.id = elm.id.replace(/\d+/, form_id);
@@ -35,11 +45,12 @@ javascript:
     $(elm).find('._destroy').val(true);
   }
   function move_up(elm) {
-    var parent = $(elm).parent
-
+    elm.prev().before(elm);
+    update_positions();
   }
   function move_down(elm) {
-
+    elm.next().after(elm);
+    update_positions();
   }
 
   window.addEventListener('load', () => {
@@ -63,9 +74,9 @@ javascript:
     = form.label :image
     = form.file_field :image
   .links
-    button type="button" onclick="add_form($('#headline-template').children().first())"
+    a onclick="add_form($('#headline-template').children().first())"
       | Headline
-    button type="button" onclick="add_form($('#body-template').children().first())"
+    a onclick="add_form($('#body-template').children().first())"
       | Body
   #templates
     #number-of-templates data-value=Ebisu::Article.template_article.paragraphs.size
