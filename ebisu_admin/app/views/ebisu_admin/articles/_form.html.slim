@@ -5,17 +5,17 @@ javascript:
     new_elm.id = '';
     rename_name_and_id_of_descendants(new_elm, form_id);
     form_id += 1;
-    new_elm.show();
+    new_elm.removeAttr('style');
     $("#paragraphs").append(new_elm);
 
     update_positions();
   }
   function rename_name_and_id_of_descendants(elm, id) {
     if (elm.id) {
-      elm.id = elm.id.replace(/-13869948/g, form_id);
+      elm.id = elm.id.replace(/\d+/, form_id);
     }
     if (elm.name) {
-      elm.name = elm.name.replace(/-13869948/g, form_id);
+      elm.name = elm.name.replace(/\d+/, form_id);
     }
 
     $(elm).children().each(function(idx, e) { rename_name_and_id_of_descendants(e, id); });
@@ -24,7 +24,7 @@ javascript:
     var paragraphs = $('#paragraphs');
     var index = 0;
 
-    paragraphs.children('.form-group').each(function(idx, elm) {
+    paragraphs.find('.form-root').each(function(idx, elm) {
       var pos = $(elm).find('.position');
       pos.attr('value', index);
       index++;
@@ -34,10 +34,24 @@ javascript:
     $(elm).hide();
     $(elm).find('._destroy').val(true);
   }
+  function move_up(elm) {
+    var parent = $(elm).parent
 
-  window.addEventListener('load', () => { form_id = $('#number-of-paragraphs').attr('value'); update_positions(); });
+  }
+  function move_down(elm) {
 
-#number-of-paragraphs value=article.paragraphs.size
+  }
+
+  window.addEventListener('load', () => {
+    form_id = $('#number-of-paragraphs').data('value') + $('#number-of-templates').data('value');
+    update_positions();
+    $('#paragraphs').sortable({
+      update: update_positions
+    });
+    $('#paragraphs').disableSelection();
+  });
+
+#number-of-paragraphs data-value=article.paragraphs.size
 = form_for article do |form|
   .form-group
     = form.label 'title'
@@ -48,25 +62,19 @@ javascript:
   .form-group
     = form.label :image
     = form.file_field :image
-  .link
-    button type="button" onclick="add_form($('#headline-template').find('.form-group').first())"
+  .links
+    button type="button" onclick="add_form($('#headline-template').children().first())"
       | Headline
-    button type="button" onclick="add_form($('#body-template').find('.form-group').first())"
+    button type="button" onclick="add_form($('#body-template').children().first())"
       | Body
-  = form.fields_for :paragraphs_attributes, index: -13869948, readonly: true do |f|
-    #headline-template style="display: none;"
-      = render "template_form", type: "Ebisu::Paragraph::Headline", form: f
-    #body-template style="display: none;"
-      = render "template_form", type: "Ebisu::Paragraph::Body", form: f
-  #paragraphs
-    = form.fields_for :paragraphs do |f|
-      .form-group
-        = f.hidden_field :_destroy, value: false, class: :_destroy
-        = f.hidden_field :type, value: f.object.type
-        = f.hidden_field :position, value: f.object.position, class: 'position'
-        = f.fields_for :delegate do |f2|
-          = render "#{f.object.type.underscore}_form", form: f2
-        button type="button" onclick="destroy_form($(this).closest('.form-group'));"
-          | Delete
+  #templates
+    #number-of-templates data-value=Ebisu::Article.template_article.paragraphs.size
+    = form.fields_for :paragraphs, Ebisu::Article.template_article.paragraphs do |f|
+      = f.hidden_field :template?, value: true
+      div id="#{f.object.type.constantize.model_name.human.downcase}-template" style="display: none;"
+        = render "template_form", type: f.object.type, form: f
+  ul#paragraphs style="list-style-type: none; padding: 0"
+    = form.fields_for :paragraphs, article.paragraphs.rank(:position) do |f|
+      = render "template_form", type: f.object.type, form: f
   .form-group
     = form.submit "Submit", class: "btn btn-success"
