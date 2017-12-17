@@ -40,9 +40,35 @@ javascript:
       index++;
     })
   }
+  function is_edited(elm) {
+    var edited = false;
+    $(elm).each(function (index, e) {
+      if ($(e).attr('type') != "hidden" && $(e).val() != "") {
+        edited = true;
+        return false;
+      }
+    });
+    return edited;
+  }
   function destroy_form(elm) {
-    $(elm).hide();
+    var edited_flag = is_edited($(elm).find('input')) || is_edited($(elm).find('textarea'));
+
+    if (edited_flag) {
+      $(elm).find('h2').addClass('deleted');
+      $(elm).find('.x_content').hide();
+      $(elm).find('.panel_toolbox.for-valid').hide();
+      $(elm).find('.panel_toolbox.for-deleted').show();
+    } else {
+      $(elm).hide();
+    }
     $(elm).find('._destroy').val(true);
+  }
+  function recover_form(elm) {
+    $(elm).find('h2').removeClass('deleted');
+    $(elm).find('.x_content').show();
+    $(elm).find('.panel_toolbox.for-valid').show();
+    $(elm).find('.panel_toolbox.for-deleted').hide();
+    $(elm).find('._destroy').val(false);
   }
   function move_up(elm) {
     elm.prev().before(elm);
