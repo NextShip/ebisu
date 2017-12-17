@@ -73,11 +73,12 @@ javascript:
   .form-group
     = form.label :image
     = form.file_field :image
-  .links
-    a onclick="add_form($('#headline-template').children().first())"
-      | Headline
-    a onclick="add_form($('#body-template').children().first())"
-      | Body
+  .btn-toolbar.links
+    .btn-group
+      a.btn onclick="add_form($('#headline-template').children().first())"
+        | Headline
+      a.btn onclick="add_form($('#body-template').children().first())"
+        | Body
   #templates
     #number-of-templates data-value=Ebisu::Article.template_article.paragraphs.size
     = form.fields_for :paragraphs, Ebisu::Article.template_article.paragraphs do |f|
