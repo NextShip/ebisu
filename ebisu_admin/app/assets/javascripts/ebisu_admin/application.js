@@ -13,3 +13,4 @@
 //= require_tree .
 //= require gentelella
 //= require gentelella-custom
+//= require jquery-ui

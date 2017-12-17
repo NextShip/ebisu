@@ -18,7 +18,7 @@ module EbisuAdmin
 
     def create
       attributes = article_params
-      attributes[:paragraphs_attributes].select! { |index, attributes| index.to_i >= 0 }
+      attributes[:paragraphs_attributes].select! { |index, attributes| !attributes[:template] }
       @article = Ebisu::Article.new(attributes)
 
       if @article.save
@@ -35,7 +35,7 @@ module EbisuAdmin
 
     def update
       attributes = article_params
-      attributes[:paragraphs_attributes].select! { |index, attributes| index.to_i >= 0 }
+      attributes[:paragraphs_attributes].select! { |index, attributes| !attributes[:template] }
       @article = Ebisu::Article.find(params[:id])
 
       if @article.update_attributes(attributes)
@@ -58,7 +58,7 @@ module EbisuAdmin
 
     private
     def article_params
-      params.require(:article).permit(:title, :abstract, :image, paragraphs_attributes: [:type, :position, :id, :_destroy, delegate_attributes: [ :content, :id ]])
+      params.require(:article).permit(:title, :abstract, :image, paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id ]])
     end
   end
 end

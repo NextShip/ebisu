@@ -1,7 +1,34 @@
-.form-group
-  = form.hidden_field :type, value: type
-  = form.hidden_field :position, class: "position"
-  = form.fields_for :delegate_attributes do |f|
-    = render "#{type.underscore}_form", form: f
-  button type="button" onclick="$(this).closest('.form-group').remove();"
-    | Delete
+li.form-root
+  .x_panel
+    .x_title
+      h2= type.constantize.model_name.human
+      ul.nav.navbar-right.panel_toolbox
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" role="button"
+            i.fa.fa-plus
+            ul.dropdown-menu role="menu"
+              li
+                a onclick="insert_after($(this).closest('.form-root'), $('#headline-template').children().first())"
+                  | Headline
+              li
+                a onclick="insert_after($(this).closest('.form-root'), $('#body-template').children().first())"
+                  | Body
+        li
+          a onclick="move_up($(this).closest('.form-root'));"
+            i.fa.fa-chevron-up
+        li
+          a onclick="move_down($(this).closest('.form-root'));"
+            i.fa.fa-chevron-down
+        li
+          a onclick="destroy_form($(this).closest('.form-root'));"
+            i.fa.fa-trash
+      .clearfix
+    .x_content
+      .form-group
+        = form.hidden_field :id
+        = form.hidden_field :_destroy, value: false, class: :_destroy
+        = form.hidden_field :type, value: type
+        = form.hidden_field :position, class: "position"
+        = "nil" if !form.object
+        = form.fields_for :delegate do |f|
+          = render "#{type.underscore}_form", form: f

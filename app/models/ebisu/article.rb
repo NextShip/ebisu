@@ -19,5 +19,12 @@ module Ebisu
     def build_paragraph(params = {})
       paragraphs.build(type: params[:type], position: params[:position], delegate_attributes: { content: params[:content] })
     end
+
+    def self.template_article
+      self.new do |article|
+        article.paragraphs.build(type: "Ebisu::Paragraph::Headline", delegate_attributes: {})
+        article.paragraphs.build(type: "Ebisu::Paragraph::Body", delegate_attributes: {})
+      end
+    end
   end
 end
