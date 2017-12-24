@@ -2,7 +2,7 @@ section.eyecatch
   ol.eyecatch-in
     - Ebisu::Article.toparticles.each do |article|
       li
-        = link_to article_path(article), style: "text-decoration: none;"
+        = link_to ebisu.article_path(article), style: "text-decoration: none;"
           .eyecatch-content
             .eyecatch__image style="background-image: url('#{article.image.url}');"
             h3.eyecatch__title= article.title
@@ -21,7 +21,7 @@ section.eyecatch
     ol
       - @articles.each do |article|
         li
-          = link_to article_path(article), style: "text-decoration: none;"
+          = link_to ebisu.article_path(article), style: "text-decoration: none;"
             .article-list-item
               = image_tag article.image.url, class: 'article-list-item__image'
               .article-list-item-caption
