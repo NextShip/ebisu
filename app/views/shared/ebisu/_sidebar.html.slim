@@ -2,18 +2,7 @@
   h2.sidebar-title sidebar title
   p.sidebar-subtitle subtitle
 ul.sidebar-articles
-  li.sidebar-article
-    .sidebar-article-image
-      = image_tag("ebisu/no-image.jpg", class: 'thumbnail')
-    .sidebar-article-text
-      | artticle text
-  li.sidebar-article
-    .sidebar-article-image
-      = image_tag("ebisu/no-image.jpg", class: 'thumbnail')
-    .sidebar-article-text
-      | artticle text
-  li.sidebar-article
-    .sidebar-article-image
-      = image_tag("ebisu/no-image.jpg", class: 'thumbnail')
-    .sidebar-article-text
-      | artticle text
+  - Ebisu::Article.recommendations.each do |article|
+    li
+      = link_to article do
+        = render_article_panel article
