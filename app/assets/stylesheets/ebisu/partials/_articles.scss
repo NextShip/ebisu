@@ -6,18 +6,23 @@
 @import 'article_module';
 @import 'article_panel';
 
+.centering {
+  text-align: center;
+}
+
 .contents-wrapper {
-  display: float;
+  width: 100%;
+  display: table;
 }
 
 .category {
-  float: left;
+  display: table-cell;
   width: 10%;
 }
 
 .sidebar {
-  float: right;
-  width: 20%;
+  display: table-cell;
+  width: 320px;
 }
 
 .clearfix {
@@ -27,66 +32,75 @@
 body.ebisu-articles.index, body.ebisu-articles.pickup, body.ebisu-articles.latest, body.ebisu-articles.search {
   .eyecatch {
     background-color: $gray-light-color;
-    .eyecatch-in {
-      width: 1010px;
-      margin: 0px auto;
-      padding: 15px 0;
-      .eyecatch-content {
-        display: inline-block;
-        vertical-align: middle;
-        width: 320px;
-        background-color: #fff;
-        border-bottom: 1px solid #d5d5d5;
-        .eyecatch-image {
-          width: 320px;
-          height: 192px;
-        }
-        .eyecatch-title {
-          display: block;
-          padding: 5px 10px;
-          height: 54px;
-          color: $atag-color;
-          font-size: 16px;
-        }
-        .eyecatch-abst {
-          padding: 0 10px;
-          height: 32px;
-          font-size: 11px;
-          color: $gray-text;
-        }
-        .eyecatch-info {
-          font-size: 12px;
-          margin: 0 10px;
-          margin-bottom: 15px;
-          .eyecatch-image-user {
-            display: inline-block;
-            vertical-align: bottom;
-            width: 20px;
-            height: 20px;
-          }
-          .eyecatch-user {
-            display: inline-block;
-            vertical-align: bottom;
-          }
-          .eyecatch-view {
-            display: inline-block;
-            vertical-align: bottom;
-            float: right;
-            .number {
-              font-weight: 700;
-            }
-            .view {
-              font-size: 10px;
-            }
-          }
-        }
+  }
+}
 
+.eyecatch-in {
+  display: flex;
+  width: 1010px;
+  margin: 0px auto;
+  padding: 15px 0;
+  .eyecatch-content {
+    vertical-align: middle;
+    margin: 5px;
+    width: 320px;
+    background-color: #fff;
+    border-bottom: 1px solid #d5d5d5;
+    .eyecatch-info {
+      font-size: 12px;
+      margin: 0 10px;
+      margin-bottom: 15px;
+      .eyecatch-image-user {
+        display: inline-block;
+        vertical-align: bottom;
+        width: 20px;
+        height: 20px;
       }
-      .eyecatch-content:nth-child(2) {
-        margin: 0 25px;
+      .eyecatch-user {
+        display: inline-block;
+        vertical-align: bottom;
+      }
+      .eyecatch-view {
+        display: inline-block;
+        vertical-align: bottom;
+        float: right;
+        .number {
+          font-weight: 700;
+        }
+        .view {
+          font-size: 10px;
+        }
       }
     }
+
   }
+  .eyecatch-content:nth-child(2) {
+    margin: 0 25px;
+  }
+}
+
+.eyecatch__image {
+  width: 320px;
+  height: 192px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.eyecatch__title {
+  display: block;
+  padding: 5px 10px;
+  margin: 0;
+  height: 54px;
+  color: $atag-color;
+  font-size: 16px;
+}
+
+.eyecatch__abst {
+  padding: 0 10px;
+  height: 32px;
+  font-size: 11px;
+  color: $gray-text;
+  overflow: hidden;
 }
 
 body.articles.show {

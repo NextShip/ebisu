@@ -1,36 +1,36 @@
 section.eyecatch
   ol.eyecatch-in
     - Ebisu::Article.toparticles.each do |article|
-      = link_to article_path(article)
-        li.eyecatch-content
-          = image_tag article.image.url, class: 'eyecatch-image'
-          h3.eyecatch-title= article.title
-          .eyecatch-abst= article.abstract
-          .eyecatch-info
-            .eyecatch-user
-              | Ebisu
+      li
+        = link_to article_path(article), style: "text-decoration: none;"
+          .eyecatch-content
+            .eyecatch__image style="background-image: url('#{article.image.url}');"
+            h3.eyecatch__title= article.title
+            .eyecatch__abst= article.abstract
+            .eyecatch-info
+              .eyecatch-user
+                | Ebisu
 
 .contents-wrapper
   aside.category
     = render 'shared/ebisu/category'
 
-  section.articles
-    h2.articles-title
+  section.article-list
+    h2.article-list__title
       | Pick up
     ol
       - @articles.each do |article|
-        = link_to article_path(article)
-          li.article
-            = image_tag article.image.url, class: 'thumbnail article-imace'
-            .article-text
-              h3.article-title
-                = article.title
-              p.article-abst
-                = article.abstract
-              / p.article-info
-                =
+        li
+          = link_to article_path(article), style: "text-decoration: none;"
+            .article-list-item
+              = image_tag article.image.url, class: 'article-list-item__image'
+              .article-list-item-caption
+                h3.article-list-item__title
+                  = article.title
+                p.article-list-item__abst
+                  = article.abstract
+                / p.article-info
+                  =
 
   aside.sidebar
     = render "shared/ebisu/sidebar"
-
-.clearfix

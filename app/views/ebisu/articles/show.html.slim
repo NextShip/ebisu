@@ -1,9 +1,9 @@
 
 .contents-wrapper
-  section.articles
-    = image_tag @article.image.url
-    h1 =@article.title
-    p =@article.abstract
+  section.article
+  	.centering = image_tag @article.image.url, class: "article__image"
+    h1.article__title =@article.title
+    p.article__abst =@article.abstract
     
     - @article.paragraphs.rank(:position).each do |paragraph|
       = paragraph.decorate.content
