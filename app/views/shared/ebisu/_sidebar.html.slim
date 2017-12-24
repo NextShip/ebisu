@@ -4,5 +4,5 @@
 ul.sidebar-articles
   - Ebisu::Article.recommendations.each do |article|
     li
-      = link_to article do
+      = link_to ebisu.article_path(article) do
         = render_article_panel article
