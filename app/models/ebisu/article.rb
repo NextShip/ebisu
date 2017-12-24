@@ -26,5 +26,9 @@ module Ebisu
         article.paragraphs.build(type: "Ebisu::Paragraph::Body", delegate_attributes: {})
       end
     end
+
+    def self.recommendations
+      all
+    end
   end
 end
