@@ -12,7 +12,7 @@
       <div class="col-md-3 left_col">
         <%= render 'ebisu_admin/shared/sidebar'%>
       </div>
-      <div class="right_col" role="main" style="min-height: 2000px;">
+      <div class="right_col" role="main" style="min-height: 680px;">
         <%= render 'ebisu_admin/shared/header'%>
         <% if alert.present? %>
           <p class="alert alert-danger"><%= alert %></p>
@@ -21,8 +21,8 @@
           <p class="alert alert-danger"><%= alert %></p>
         <% end %>
         <%= yield %>
-        <%= render 'ebisu_admin/shared/footer'%>
       </div>
+      <%= render 'ebisu_admin/shared/footer'%>
     </div>
   </div>
 
