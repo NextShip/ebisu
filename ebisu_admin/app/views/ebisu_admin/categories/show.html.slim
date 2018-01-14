@@ -1,0 +1,17 @@
+.row
+  h1= @category.name
+  = link_to edit_category_path(@category)
+    i.fa.fa-edit
+  button.btn.btn-link data-toggle="modal" data-target="#delete_confirmation"
+    i.fa.fa-trash
+
+.modal.fade#delete_confirmation
+  .modal-dialog
+    .modal-content
+      .modal-body
+        h2 この記事を削除してもよろしいですか？
+      .modal-footer
+        = link_to category_path(@category), method: :delete, class: "btn btn-danger"
+          | はい
+        button.btn.btn-default type="button" data-dismiss="modal"
+          | いいえ

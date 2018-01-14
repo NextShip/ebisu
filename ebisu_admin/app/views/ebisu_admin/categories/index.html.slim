@@ -1,0 +1,15 @@
+.row
+  .col-md-12
+    h1= t('categories')
+    .x_panel
+      .x_content
+        table.table
+          thead
+            tr
+              th= '#'
+              th= t('name')
+          tbody
+            - @categories.each do |category|
+              tr
+                td= category.id
+                td= link_to category.name, category_path(category)

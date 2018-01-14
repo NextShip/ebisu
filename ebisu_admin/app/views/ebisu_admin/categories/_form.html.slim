@@ -1,0 +1,6 @@
+= form_for category do |form|
+  .form-group
+    = form.label :name
+    = form.text_field :name
+
+  = form.submit 'Submit', class: "btn btn-success"

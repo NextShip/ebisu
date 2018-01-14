@@ -14,6 +14,13 @@
           = link_to new_article_path
             i.fa.fa-file
             | 記事作成
+        li
+          = link_to categories_path
+            i.fa.fa-tags
+            | カテゴリ一覧
+          = link_to new_category_path
+            i.fa.fa-tag
+            | カテゴリ作成
   .sidebar-footer.hidden-small
     a[data-toggle="tooltip" data-placement="top" title="Logout" href="login.html"]
       span.glyphicon.glyphicon-off[aria-hidden="true"]
