@@ -91,11 +91,11 @@ javascript:
 #number-of-paragraphs data-value=article.paragraphs.size
 = form_for article do |form|
   .form-group
-    = form.label 'title'
-    = form.text_field :title
+    = form.label 'title', class: "col-md-2"
+    = form.text_field :title, class: "form-control"
   .form-group
-    = form.label 'abstract'
-    = form.text_area :abstract
+    = form.label 'abstract', class: "col-md-2"
+    = form.text_area :abstract, class: "form-control"
   .form-group
     = form.label :image
     = form.file_field :image
