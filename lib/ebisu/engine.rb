@@ -1,4 +1,5 @@
 require 'ebisu/article_view_helper'
+require 'ebisu/config.rb'
 
 module Ebisu
   class Engine < ::Rails::Engine
