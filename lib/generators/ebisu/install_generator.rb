@@ -2,6 +2,7 @@ require "rails"
 
 module Ebisu
   class InstallGenerator < Rails::Generators::Base
+    source_root File.expand_path("../templates", __FILE__)
 
     def create_directories
       empty_directory "app/views/ebisu/articles"
@@ -15,6 +16,10 @@ module Ebisu
     def run_migrations
       say_status :running, "migrations"
       `rake db:migrate VERBOSE=false`
+    end
+
+    def copy_initializer_file
+      copy_file "ebisu.rb", "config/initializers/ebisu.rb"
     end
   end
 end
