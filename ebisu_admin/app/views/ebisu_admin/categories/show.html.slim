@@ -5,6 +5,12 @@
   button.btn.btn-link data-toggle="modal" data-target="#delete_confirmation"
     i.fa.fa-trash
 
+  ul
+    - @category.articles.each do |article|
+      li
+        = link_to article_path(article)
+          = article.title
+
 .modal.fade#delete_confirmation
   .modal-dialog
     .modal-content
