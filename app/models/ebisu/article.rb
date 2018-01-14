@@ -6,7 +6,7 @@ module Ebisu
     end
     has_many :paragraphs, dependent: :destroy
 
-    accepts_nested_attributes_for :paragraphs, allow_destroy: true
+    accepts_nested_attributes_for :paragraphs, allow_destroy: true, reject_if: proc { |attributes| attributes[:template] }
 
     # validations
     validates :title, presence: true
