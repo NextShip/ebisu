@@ -18,7 +18,6 @@ module EbisuAdmin
 
     def create
       attributes = article_params
-      attributes[:paragraphs_attributes].select! { |index, attributes| !attributes[:template] }
       @article = Ebisu::Article.new(attributes)
 
       if @article.save
@@ -35,7 +34,6 @@ module EbisuAdmin
 
     def update
       attributes = article_params
-      attributes[:paragraphs_attributes].select! { |index, attributes| !attributes[:template] }
       @article = Ebisu::Article.find(params[:id])
 
       if @article.update_attributes(attributes)
