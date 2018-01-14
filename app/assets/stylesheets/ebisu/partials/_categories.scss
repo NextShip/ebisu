@@ -1,21 +1,11 @@
 body.categories.index {
-  .content {
-    .content-wrapper {
-      width: 1010px;
-      margin: 0 auto;
-      margin-top: 20px;
-    }
+  @import 'article_module';
+  .content-wrapper {
+    margin: 0 10px;
   }
 }
+
 body.categories.show {
-  .content {
-    .content-wrapper {
-      width: 1010px;
-      margin: 0 auto;
-      margin-top: 20px;
-      height: 100%;
-      @import 'category_module';
-      @import 'article_module';
-    }
-  }
+  @import 'article_module';
 }
+

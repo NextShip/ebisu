@@ -16,42 +16,42 @@
 
 
 @media (max-width: 415px) {
-  @import 'partials/header-sp';
-  @import 'partials/footer-sp';
-  @import 'partials/sidebar-sp';
-  @import 'partials/articles-sp';
-  @import 'partials/categories-sp';
-  @import 'partials/contact-sp';
-  @import 'partials/about-sp';
+  @import 'partials/header';
+  @import 'partials/footer';
+  @import 'partials/sidebar';
+  @import 'partials/articles';
+  @import 'partials/categories';
+  @import 'partials/contact';
+  @import 'partials/about';
 }
 @media (max-width: 767px) and (min-width: 416px) {
-  @import 'partials/header-sp';
-  @import 'partials/footer-sp';
-  @import 'partials/sidebar-sp';
-  @import 'partials/articles-sp';
-  @import 'partials/categories-sp';
-  @import 'partials/contact-sp';
-  @import 'partials/about-sp';
+  @import 'partials/header';
+  @import 'partials/footer';
+  @import 'partials/sidebar';
+  @import 'partials/articles';
+  @import 'partials/categories';
+  @import 'partials/contact';
+  @import 'partials/about';
 }
 @media (max-width: 1024px) and (min-width: 768px) {
-  @import 'partials/header';
-  @import 'partials/footer';
-  @import 'partials/sidebar';
+  @import 'partials/header-pc';
+  @import 'partials/footer-pc';
+  @import 'partials/sidebar-pc';
   @import 'partials/breadcrumb';
-  @import 'partials/articles';
-  @import 'partials/contact';
-  @import 'partials/about';
-  @import 'partials/categories';
+  @import 'partials/articles-pc';
+  @import 'partials/contact-pc';
+  @import 'partials/about-pc';
+  @import 'partials/categories-pc';
 }
 @media (min-width: 1024px) {
-  @import 'partials/header';
-  @import 'partials/footer';
-  @import 'partials/sidebar';
+  @import 'partials/header-pc';
+  @import 'partials/footer-pc';
+  @import 'partials/sidebar-pc';
   @import 'partials/breadcrumb';
-  @import 'partials/articles';
-  @import 'partials/contact';
-  @import 'partials/about';
-  @import 'partials/categories';
+  @import 'partials/articles-pc';
+  @import 'partials/contact-pc';
+  @import 'partials/about-pc';
+  @import 'partials/categories-pc';
 }
 
 body {
