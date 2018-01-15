@@ -24,6 +24,7 @@ module Ebisu
       self.new do |article|
         article.paragraphs.build(type: "Ebisu::Paragraph::Headline", delegate_attributes: {})
         article.paragraphs.build(type: "Ebisu::Paragraph::Body", delegate_attributes: {})
+        article.paragraphs.build(type: "Ebisu::Paragraph::Figure", delegate_attributes: {})
       end
     end
 

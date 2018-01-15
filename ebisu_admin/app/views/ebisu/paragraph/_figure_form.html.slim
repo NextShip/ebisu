@@ -1,0 +1,4 @@
+- if form.object.content.present?
+  = image_tag form.object.content.url
+- else
+  = form.file_field :content, class: "form-control"
