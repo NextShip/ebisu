@@ -105,6 +105,8 @@ javascript:
         | Headline
       a.btn onclick="add_form($('#body-template').children().first())"
         | Body
+      a.btn onclick="add_form($('#figure-template').children().first())"
+        | Figure
   #templates
     #number-of-templates data-value=Ebisu::Article.template_article.paragraphs.size
     = form.fields_for :paragraphs, Ebisu::Article.template_article.paragraphs do |f|
