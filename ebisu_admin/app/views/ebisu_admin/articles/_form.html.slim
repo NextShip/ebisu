@@ -99,6 +99,9 @@ javascript:
   .form-group
     = form.label :image
     = form.file_field :image
+  .form-group
+    = form.label :category_id
+    = form.collection_select :category_id, Ebisu::Category.all, :id, :name, { prompt: "選択してください" }, { class: "form-control" }
   .btn-toolbar.links
     .btn-group
       a.btn onclick="add_form($('#headline-template').children().first())"

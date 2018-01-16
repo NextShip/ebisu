@@ -2,6 +2,13 @@
   h3.category-title カテゴリ
   ul
     - Ebisu::Category.all.each do |category|
-      li.current
-        .category-name
-          = category.name
+      - if @category.present? && @category == category
+        li.current
+          = link_to category_path(category) do
+            .category-name
+              = category.name
+      - else
+        li
+          = link_to category_path(category) do
+            .category-name
+              = category.name

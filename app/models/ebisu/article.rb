@@ -11,6 +11,7 @@ module Ebisu
     # validations
     validates :title, presence: true
     validates :abstract, presence: true
+    validates :category_id, presence: true
 
     def self.toparticles()
       self.all.take(3)

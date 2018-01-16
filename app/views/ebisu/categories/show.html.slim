@@ -1,0 +1,36 @@
+/ section.eyecatch
+/   ol.eyecatch-in
+/     - Ebisu::Article.toparticles.each do |article|
+/       li
+/         = link_to ebisu.article_path(article), style: "text-decoration: none;"
+/           .eyecatch-content
+/             .eyecatch__image style="background-image: url('#{article.image.url}');"
+/             h3.eyecatch__title= article.title
+/             .eyecatch__abst= article.abstract
+/             .eyecatch-info
+/               .eyecatch-user
+/                 | Ebisu
+
+.contents-wrapper
+  aside.category
+    = render 'shared/ebisu/category'
+
+  section.article-list
+    h2.article-list__title
+      | #{@category.name} の Pick Up
+    ol
+      - @articles.each do |article|
+        li
+          = link_to ebisu.article_path(article), style: "text-decoration: none;"
+            .article-list-item
+              = image_tag article.image.url, class: 'article-list-item__image'
+              .article-list-item-caption
+                h3.article-list-item__title
+                  = article.title
+                p.article-list-item__abst
+                  = article.abstract
+                / p.article-info
+                  =
+
+  aside.sidebar
+    = render "shared/ebisu/sidebar"

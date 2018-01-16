@@ -1,8 +1,8 @@
-
 .contents-wrapper
   section.article
   	.centering = image_tag @article.image.url, class: "article__image"
     h1.article__title =@article.title
+    p.article__abst =@article.category.name
     p.article__abst =@article.abstract
     
     - @article.paragraphs.rank(:position).each do |paragraph|
