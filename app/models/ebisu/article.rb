@@ -5,8 +5,8 @@ module Ebisu
       default Rails.root.join('public', 'images', 'no-image.jpg')
     end
     has_many :paragraphs, dependent: :destroy
-
     accepts_nested_attributes_for :paragraphs, allow_destroy: true, reject_if: proc { |attributes| attributes[:template] }
+    belongs_to :category
 
     # validations
     validates :title, presence: true

@@ -1,9 +1,7 @@
 .categories
   h3.category-title カテゴリ
   ul
-    li.current
-      span.category-name category
-    li
-      span.category-name category
-    li
-      span.category-name category
+    - Ebisu::Category.all.each do |category|
+      li.current
+        .category-name
+          = category.name
