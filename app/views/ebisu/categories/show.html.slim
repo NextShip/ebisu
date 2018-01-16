@@ -1,15 +1,15 @@
-section.eyecatch
-  ol.eyecatch-in
-    - Ebisu::Article.toparticles.each do |article|
-      li
-        = link_to ebisu.article_path(article), style: "text-decoration: none;"
-          .eyecatch-content
-            .eyecatch__image style="background-image: url('#{article.image.url}');"
-            h3.eyecatch__title= article.title
-            .eyecatch__abst= article.abstract
-            .eyecatch-info
-              .eyecatch-user
-                | Ebisu
+/ section.eyecatch
+/   ol.eyecatch-in
+/     - Ebisu::Article.toparticles.each do |article|
+/       li
+/         = link_to ebisu.article_path(article), style: "text-decoration: none;"
+/           .eyecatch-content
+/             .eyecatch__image style="background-image: url('#{article.image.url}');"
+/             h3.eyecatch__title= article.title
+/             .eyecatch__abst= article.abstract
+/             .eyecatch-info
+/               .eyecatch-user
+/                 | Ebisu
 
 .contents-wrapper
   aside.category
@@ -17,7 +17,7 @@ section.eyecatch
 
   section.article-list
     h2.article-list__title
-      | Pick up
+      | #{@category.name} の Pick Up
     ol
       - @articles.each do |article|
         li
