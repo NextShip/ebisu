@@ -1,7 +1,9 @@
 .row
   h1= @article.title
   p= @article.category.name
+  p= @article.created_at
   p= @article.abstract
+  = image_tag @article.image.url, class: "article__image col-md-12"
   - @article.paragraphs.rank(:position).each do |paragraph|
     = paragraph.decorate.content
   = link_to edit_article_path(@article)
