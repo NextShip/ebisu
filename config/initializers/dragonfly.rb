@@ -13,7 +13,9 @@ Dragonfly.app.configure do
       root_path: Rails.root.join('public/system/dragonfly', Rails.env),
       server_root: Rails.root.join('public')
   elsif Rails.env.production?
-    response_header "Cache-Control", "public, max-age=315360000"
+    response_header 'Cache-Control' do |job, request, headers|    # either directly or with a block
+      job.image? ? "public, max-age=315360000" : "private"         # setting to nil removes the header
+    end
     datastore :s3,
       bucket_name: ENV['EBISU_AWS_BUCKET_NAME'],
       access_key_id: ENV['EBISU_AWS_ACCESSS_KEY_ID'], 
