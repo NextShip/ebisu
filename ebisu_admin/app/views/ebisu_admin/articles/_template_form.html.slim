@@ -7,12 +7,10 @@ li.form-root
           a.dropdown-toggle data-toggle="dropdown" role="button"
             i.fa.fa-plus
             ul.dropdown-menu role="menu"
-              li
-                a onclick="insert_after($(this).closest('.form-root'), $('#headline-template').children().first())"
-                  | Headline
-              li
-                a onclick="insert_after($(this).closest('.form-root'), $('#body-template').children().first())"
-                  | Body
+              - Ebisu::Paragraph::SUBCLASSES.each do |klass|
+                li
+                  a onclick="insert_after($(this).closest('.form-root'), $('##{klass.constantize.model_name.human.downcase}-template').children().first())"
+                    = klass.constantize.model_name.human
         li
           a onclick="move_up($(this).closest('.form-root'));"
             i.fa.fa-chevron-up
