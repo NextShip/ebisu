@@ -14,7 +14,7 @@ Dragonfly.app.configure do
     end
     datastore :s3,
       bucket_name: ENV['EBISU_AWS_BUCKET_NAME'],
-      access_key_id: ENV['EBISU_AWS_ACCESSS_KEY_ID'], 
+      access_key_id: ENV['EBISU_AWS_ACCESS_KEY_ID'], 
       secret_access_key: ENV['EBISU_AWS_SECRET_ACCESS_KEY'],
       region: ENV['EBISU_AWS_REGION']
   else
