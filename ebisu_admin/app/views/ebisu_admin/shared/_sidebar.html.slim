@@ -15,5 +15,5 @@
             i.fa.fa-file
             | 記事作成
   .sidebar-footer.hidden-small
-    a[data-toggle="tooltip" data-placement="top" title="Logout" href="login.html"]
+    = link_to main_app.destroy_user_session_path, method: :delete, class: 'data-toggle="tooltip" data-placement="top" title="Logout'
       span.glyphicon.glyphicon-off[aria-hidden="true"]
