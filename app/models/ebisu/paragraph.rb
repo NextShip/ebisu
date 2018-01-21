@@ -11,5 +11,11 @@ module Ebisu
 
     # validations
     validates :position, presence: true
+
+    SUBCLASSES = %w(
+      Ebisu::Paragraph::Headline
+      Ebisu::Paragraph::Body
+      Ebisu::Paragraph::Figure
+    )
   end
 end
