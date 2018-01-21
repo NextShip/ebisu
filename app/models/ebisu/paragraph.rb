@@ -16,6 +16,7 @@ module Ebisu
       Ebisu::Paragraph::Headline
       Ebisu::Paragraph::Body
       Ebisu::Paragraph::Figure
+      Ebisu::Paragraph::Quotation
     )
   end
 end
