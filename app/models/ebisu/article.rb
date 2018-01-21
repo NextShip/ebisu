@@ -2,7 +2,7 @@ module Ebisu
   class Article < ApplicationRecord
     # associations
     dragonfly_accessor :image do
-      default Rails.root.join('no-image.jpg')
+      default '/public/images/no-image.jpg'
     end
     has_many :paragraphs, dependent: :destroy
     accepts_nested_attributes_for :paragraphs, allow_destroy: true, reject_if: proc { |attributes| attributes[:template] }
