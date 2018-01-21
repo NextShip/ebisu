@@ -17,6 +17,8 @@ module Ebisu
       Ebisu::Paragraph::Body
       Ebisu::Paragraph::Figure
       Ebisu::Paragraph::Quotation
+      Ebisu::Paragraph::Tweet
+      Ebisu::Paragraph::Youtube
     )
   end
 end
