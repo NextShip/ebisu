@@ -5,6 +5,8 @@ module Ebisu
       default '/public/images/no-image.jpg'
     end
     has_many :paragraphs, dependent: :destroy
+    has_many :article_tags
+    has_many :tags, through: :article_tags
     accepts_nested_attributes_for :paragraphs, allow_destroy: true, reject_if: proc { |attributes| attributes[:template] }
     belongs_to :category
 
