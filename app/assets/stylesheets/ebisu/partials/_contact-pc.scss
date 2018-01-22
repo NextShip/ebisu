@@ -1,11 +1,16 @@
 body.contact.new {
   .contact {
     .contact-in {
-      margin: 15px;
+      width: 1010px;
+      margin: 20px auto 0;
       .header {
-        margin-bottom: 5px;
+        font-size: 26px;
+        font-weight: 400;
+        margin-bottom: 10px;
       }
       .contact-form {
+        border: 2px solid #eee;
+        padding: 20px 30px;
         .input-group {
           margin-bottom: 20px;
           .input-label {
@@ -25,20 +30,20 @@ body.contact.new {
           .input-field {
             font-size: 14px;
             display: inline-block;
-            width: 100%;
+            width: 400px;
             border: 1px solid #ddd;
             padding: 8px 0 6px 10px;
           }
           .input-textarea {
             font-size: 14px;
             display: inline-block;
-            width: 100%;
+            width: 680px;
             height: 200px;
             border: 1px solid #ddd;
             padding: 8px 0 6px 10px;
           }
           .submit-btn {
-            width: 100%;
+            width: 200px;
             font-size: 14px;
             font-weight: 700;
             padding: 5px 20px;

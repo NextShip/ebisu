@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency "draper"
   s.add_dependency "devise"
   s.add_dependency "pundit"
-  s.add_dependency "rolify"
+  s.add_dependency "browser"
   s.add_dependency "dragonfly-s3_data_store"
   s.add_dependency "ruby-oembed"
   s.add_dependency "mime-types"

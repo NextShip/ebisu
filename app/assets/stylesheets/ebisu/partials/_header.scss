@@ -1,39 +1,18 @@
 #ebisu-header .nav-wrapper {
   position: relative;
-  height: 72px;
-  width: 1010px;
-  margin: 0 auto;
+  height: 44px;
   .nav {
     position: absolute;
-    height: 72px;
+    height: 44px;
     width: 100%;
-    .search {
-      height: 72px;
+    .menu {
       position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 12px;
-      z-index: 1;
-      .search-form {
-        margin-top: 20px;
-        position: absolute;
-        .search-input {
-          position: relative;
-          border: 1px solid #ddd;
-          border-radius: 3px;
-          padding: 0 50px 0 8px;
-          color: #333;
-          width: 250px;
-          height: 30px;
-        }
-        .search-btn {
-          position: absolute;
-          right: 0;
-          top: 0px;
-          width: 50px;
-          height: 30px;
-          background: image-url('search_btn.png') left top no-repeat;
-        }
+      top: 4px;
+      left: 10px;
+      a {
+        font-size: 24px;
+        color: #ddd;
+        z-index: 10;
       }
     }
     .logo-wrapper{
@@ -41,30 +20,62 @@
       display: block;
       text-align: center;
       .logo {
-        margin: 13px 0 0 0;
-        height: 50px;
+        margin: 10px 0 0 0;
+        height: 30px;
       }
     }
-    .menu {
-      height: 72px;
+    .search {
       position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 1;
-      ul {
-        margin-top: 25px;
-        list-style-type: none;
-        li {
-          a {
-            margin-left: 25px;
-            font-size: 12px;
-            color: $atag-color;
-          }
-          >:visited {
-            color: $atag-color;
-          }
-        }
+      top: 4px;
+      right: 10px;
+      a {
+        font-size: 24px;
+        color: #ddd;
       }
     }
+  }
+}
+.drawer-menu {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #fff; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 40px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  .drawer-menu-btn-close {
+    font-size: 24px;
+    position: absolute;
+    top: 4px;
+    left: 10px;
+  }
+
+
+  h3 {
+    padding: 8px 8px 8px 8px;
+  }
+  li {
+    padding: 8px 8px 8px 8px;
+    a {
+      text-decoration: none;
+      font-size: 13px;
+      color: $gray-dark-text;
+      transition: 0.3s
+    }
+  }
+
+  a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
   }
 }
