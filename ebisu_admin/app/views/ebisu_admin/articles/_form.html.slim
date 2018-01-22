@@ -102,6 +102,9 @@ javascript:
   .form-group
     = form.label :category_id
     = form.collection_select :category_id, Ebisu::Category.all, :id, :name, { prompt: "選択してください" }, { class: "form-control" }
+  .form-group
+    = form.label :published_at
+    = form.datetime_local_field :published_at, value: Time.zone.now
   .btn-toolbar.links
     .btn-group
       - Ebisu::Paragraph::SUBCLASSES.each do |klass|
