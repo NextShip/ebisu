@@ -1,4 +1,5 @@
 require_dependency "ebisu/application_controller"
+require "browser"
 
 module Ebisu
   class ArticlesController < ApplicationController

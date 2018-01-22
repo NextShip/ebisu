@@ -1,0 +1,21 @@
+body.categories.index {
+  .content {
+    .content-wrapper {
+      width: 1010px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  }
+}
+body.categories.show {
+  .content {
+    .content-wrapper {
+      width: 1010px;
+      margin: 0 auto;
+      margin-top: 20px;
+      height: 100%;
+      @import 'category_module';
+      @import 'article_module-pc';
+    }
+  }
+}
