@@ -99,12 +99,14 @@ javascript:
   .form-group
     = form.label :image
     = form.file_field :image
+  .form-group
+    = form.label :category_id
+    = form.collection_select :category_id, Ebisu::Category.all, :id, :name, { prompt: "選択してください" }, { class: "form-control" }
   .btn-toolbar.links
     .btn-group
-      a.btn onclick="add_form($('#headline-template').children().first())"
-        | Headline
-      a.btn onclick="add_form($('#body-template').children().first())"
-        | Body
+      - Ebisu::Paragraph::SUBCLASSES.each do |klass|
+        a.btn onclick="add_form($('##{klass.constantize.model_name.human.downcase}-template').children().first())"
+          = klass.constantize.model_name.human
   #templates
     #number-of-templates data-value=Ebisu::Article.template_article.paragraphs.size
     = form.fields_for :paragraphs, Ebisu::Article.template_article.paragraphs do |f|
