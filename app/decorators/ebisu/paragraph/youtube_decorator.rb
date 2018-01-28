@@ -1,4 +1,4 @@
-class Ebisu::Paragraph::YoutubeDecorator < Draper::Decorator
+class Ebisu::Paragraph::YoutubeDecorator < Ebisu::ParagraphDecorator
   delegate_all
 
   def content
