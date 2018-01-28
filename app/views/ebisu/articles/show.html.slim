@@ -4,6 +4,7 @@
     h1.article__title =@article.title
     p.article__abst =@article.category.name
     p.article__abst =@article.abstract
+    p =@article.impressionist_count
     
     - @article.paragraphs.rank(:position).each do |paragraph|
       = paragraph.decorate.content

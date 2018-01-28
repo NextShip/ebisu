@@ -1,5 +1,8 @@
 module Ebisu
   class Article < ApplicationRecord
+    # add-ons
+    is_impressionable
+
     # associations
     dragonfly_accessor :image do
       default '/public/images/no-image.jpg'

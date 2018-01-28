@@ -8,6 +8,7 @@ require 'rolify'
 require 'pundit'
 require 'ebisu_admin'
 require 'oembed'
+require 'impressionist'
 
 OEmbed::Providers.register_all
 
