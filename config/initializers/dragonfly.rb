@@ -4,7 +4,7 @@ require 'dragonfly/s3_data_store'
 # Configure
 Dragonfly.app.configure do
   plugin :imagemagick
-  protect_from_dos_attacks true
+  verify_urls true
   secret "f0f29ee054b86a6b2abcd526a057d8b1432bf2a89c7ba62caab4446b05de050a"
   url_format "/media/:job/:name"
 
@@ -22,6 +22,28 @@ Dragonfly.app.configure do
       root_path: Rails.root.join('public/system/dragonfly', Rails.env),
       server_root: Rails.root.join('public')
   end
+
+  # Override the .url method...
+  define_url do |app, job, opts|
+    thumb = Ebisu::Thumbnail.find_by_signature(job.signature)
+    # If (fetch 'some_uid' then resize to '40x40') has been stored already, give the datastore's remote url ...
+    if thumb
+      app.datastore.url_for(thumb.uid)
+    # ...otherwise give the local Dragonfly server url
+    else
+      app.server.url_for(job)
+    end
+  end
+
+  # Before serving from the local Dragonfly server...
+  before_serve do |job, env|
+    # ...store the thumbnail in the datastore...
+    uid = job.store
+
+    # ...keep track of its uid so next time we can serve directly from the datastore
+    Ebisu::Thumbnail.create!(uid: uid, signature: job.signature)
+  end
+
 end
 
 # Logger
