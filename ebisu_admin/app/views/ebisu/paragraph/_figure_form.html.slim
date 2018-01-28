@@ -2,3 +2,9 @@
   = image_tag form.object.content.url
 - else
   = form.file_field :content, class: "form-control"
+.form-group
+  = form.label :source, t('ebisu.activerecord.attributes.figure.source')
+  = form.text_field :source, class: "form-control"
+.form-group
+  = form.label :source, "#{t('ebisu.activerecord.attributes.figure.source')} URL"
+  = form.text_field :source_url, class: "form-control"

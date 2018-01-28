@@ -21,5 +21,9 @@ module Ebisu
     def copy_initializer_file
       copy_file "ebisu.rb", "config/initializers/ebisu.rb"
     end
+
+    def copy_locale_file
+      copy_file "ebisu.ja.yml", "config/locales/ebisu.ja.yml"
+    end
   end
 end
