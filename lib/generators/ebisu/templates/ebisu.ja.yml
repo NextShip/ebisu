@@ -1,0 +1,6 @@
+ja:
+  ebisu:
+    activerecord:
+      attributes:
+        figure:
+          source: 出典
