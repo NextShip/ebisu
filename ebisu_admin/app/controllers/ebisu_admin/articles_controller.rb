@@ -56,7 +56,7 @@ module EbisuAdmin
 
     private
     def article_params
-      params.require(:article).permit(:title, :abstract, :image, :category_id, :published_at, paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id, :source, :source_url ]])
+      params.require(:article).permit(:title, :abstract, :image, :category_id, :published_at, tag_ids: [], paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id, :source, :source_url ]])
     end
   end
 end
