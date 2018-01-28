@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20180128022809) do
 
+  create_table "ebisu_article_tags", force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "ebisu_articles", force: :cascade do |t|
     t.string "title"
     t.text "abstract"
@@ -63,6 +70,12 @@ ActiveRecord::Schema.define(version: 20180128022809) do
   create_table "ebisu_quotations", force: :cascade do |t|
     t.integer "paragraph_id"
     t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ebisu_tags", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
