@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency "dragonfly-s3_data_store"
   s.add_dependency "ruby-oembed"
   s.add_dependency "mime-types"
+  s.add_dependency "impressionist", "~> 1.6"
 
   s.add_development_dependency "sqlite3"
 end
