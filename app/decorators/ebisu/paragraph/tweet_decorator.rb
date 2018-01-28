@@ -1,4 +1,4 @@
-class Ebisu::Paragraph::TweetDecorator < Draper::Decorator
+class Ebisu::Paragraph::TweetDecorator < Ebisu::ParagraphDecorator
   delegate_all
 
   def content

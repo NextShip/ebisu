@@ -1,4 +1,4 @@
-class Ebisu::Paragraph::QuotationDecorator < Draper::Decorator
+class Ebisu::Paragraph::QuotationDecorator < Ebisu::ParagraphDecorator
   delegate_all
 
   def content
