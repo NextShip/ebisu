@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ebisu (0.2.1)
+    ebisu (0.3.0)
       browser
       devise
       dragonfly (~> 1.1.3)

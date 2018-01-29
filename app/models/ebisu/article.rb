@@ -1,7 +1,7 @@
 module Ebisu
   class Article < ApplicationRecord
     # add-ons
-    is_impressionable
+    is_impressionable counter_cache: true
 
     # associations
     dragonfly_accessor :image do
