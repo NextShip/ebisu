@@ -1,5 +1,6 @@
 .row
   h1= @article.title
+  p= "Author: #{@article.author.decorate.name_or_email}"
   p= @article.category.name
   p= @article.abstract
   - @article.paragraphs.rank(:position).each do |paragraph|
