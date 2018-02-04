@@ -107,7 +107,7 @@ javascript:
     = form.file_field :image
   .form-group
     = form.label :category_id
-    = form.collection_select :category_id, Ebisu::Category.all, :id, :name, { prompt: "選択してください" }, { class: "form-control" }
+    = form.collection_select :category_id, Ebisu::Category.leaves.decorate, :id, :full_name, { prompt: "選択してください" }, { class: "form-control" }
   .form-group
     = form.label :tags
     = form.collection_select :tag_ids, Ebisu::Tag.all, :id, :name, { prompt: "選択してください" }, { class: "form-control searchable", multiple: true }
