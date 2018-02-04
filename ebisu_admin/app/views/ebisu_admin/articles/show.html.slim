@@ -1,4 +1,5 @@
 .row
+  = link_to "View in App", ebisu.article_path(@article), { class: "btn btn-default" }
   h1= @article.title
   p= "Author: #{@article.author.decorate.name_or_email}"
   p= @article.category.name
