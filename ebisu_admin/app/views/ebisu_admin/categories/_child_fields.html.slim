@@ -1,0 +1,6 @@
+.nested-fields
+  .form-group
+    = f.label :name
+    = f.text_field :name
+    span
+      = link_to_remove_association "remove subcategory", f

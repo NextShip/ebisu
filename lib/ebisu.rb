@@ -9,6 +9,7 @@ require 'pundit'
 require 'ebisu_admin'
 require 'oembed'
 require 'impressionist'
+require 'cocoon'
 
 OEmbed::Providers.register_all
 

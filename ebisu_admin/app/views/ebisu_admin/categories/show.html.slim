@@ -1,0 +1,19 @@
+.row
+  h1 =@category.name
+  - if @category.parent.present?
+    h2 ="Supercategory: #{@category.parent.name}"
+
+  .x_panel
+    .x_title
+      h3 ="Subcategories"
+    .x_content
+      table.table
+        thead
+          tr
+            th #
+            th =Ebisu::Category.model_name.human
+        tbody
+          - @category.children.each do |child|
+            tr
+              td =child.id
+              td =link_to child.name, category_path(child)
