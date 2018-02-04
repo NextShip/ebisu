@@ -1,0 +1,21 @@
+.row
+  h1 New Category
+
+  = form_for @category do |form|
+    .form-group
+      = form.label :name, class: "col-md-2"
+      = form.text_field :name, class: "form-control"
+
+    .x_panel
+      .x_title
+        h2 Subcategories
+        .clearfix
+      .x_content
+        #children
+          = form.fields_for :children do |f|
+            = render 'child_fields', f: f
+          .links
+            = link_to_add_association 'add subcategory', form, :children
+
+    .form-group
+      = form.submit "Submit", class: "btn btn-success"

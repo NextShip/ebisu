@@ -14,3 +14,4 @@
 //= require gentelella
 //= require gentelella-custom
 //= require jquery-ui
+//= require cocoon

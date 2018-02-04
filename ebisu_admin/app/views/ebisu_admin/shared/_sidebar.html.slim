@@ -14,6 +14,15 @@
           = link_to new_article_path
             i.fa.fa-file
             | 記事作成
+        - if current_user.has_role? :admin
+          li
+            = link_to categories_path
+              i.fa.fa-object-group
+              | カテゴリ一覧
+          li
+            = link_to new_category_path
+              i.fa.fa-code
+              | カテゴリ作成
   .sidebar-footer.hidden-small
     = link_to main_app.destroy_user_session_path, method: :delete, class: 'data-toggle="tooltip" data-placement="top" title="Logout'
       span.glyphicon.glyphicon-off[aria-hidden="true"]
