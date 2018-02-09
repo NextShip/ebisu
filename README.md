@@ -26,17 +26,16 @@ Contribution directions go here.
 
 ## How to Update Ebisu
 ebisuのversionを上げる手順
-```1. ebisuのversionを上げる(lib/ebisu/version.rb)
+```
+1. ebisu側でebisuのversionを上げる(lib/ebisu/version.rb)
 2. bundle update ebisu
 またはGemfileでebisuのversion指定
-```
 
 (migrationファイルがある場合)
-```3. bundle exec rails ebisu:install:migrations 
-4. bundle exec rake db:migrate
-```
+3. bundle exec rails ebisu:install:migrations 
 
-```5. commitしてpush
+4. bundle exec rake db:migrate
+5. commitしてpush
 ```
 
 ## License

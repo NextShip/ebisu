@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ebisu (0.3.1)
+    ebisu (0.4.0)
       browser
       cocoon
       devise
