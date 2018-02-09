@@ -19,7 +19,7 @@ module EbisuAdmin
     def create
       attributes = article_params
       @article = Ebisu::Article.new(attributes)
-      @article.author = current_user
+      @article.user = current_user
 
       if @article.save
         redirect_to @article

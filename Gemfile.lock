@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ebisu (0.3.1)
+    ebisu (0.4.0)
       browser
       cocoon
       devise
@@ -289,4 +289,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   1.15.4
+   1.16.1

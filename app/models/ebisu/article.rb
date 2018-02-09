@@ -12,12 +12,12 @@ module Ebisu
     has_many :tags, through: :article_tags
     accepts_nested_attributes_for :paragraphs, allow_destroy: true, reject_if: proc { |attributes| attributes[:template] }
     belongs_to :category
-    belongs_to :author, class_name: "User"
 
     # validations
     validates :title, presence: true
     validates :abstract, presence: true
     validates :category_id, presence: true
+    validates :user_id, presence: true
 
     def self.toparticles()
       self.all.take(3)
