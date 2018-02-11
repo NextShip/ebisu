@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180211023449) do
     t.datetime "updated_at", null: false
     t.string "image_uid"
     t.integer "impressions_count", default: 0
-    t.integer "author_id"
+    t.integer "user_id"
   end
 
   create_table "ebisu_bodies", force: :cascade do |t|
