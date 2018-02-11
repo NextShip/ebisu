@@ -38,6 +38,10 @@ class ApplicationPolicy
     user && user.has_role?(:writer)
   end
 
+  def admin?
+    user && user.has_role?(:admin)
+  end
+
   def scope
     Pundit.policy_scope!(user, record.class)
   end
