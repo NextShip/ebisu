@@ -1,7 +1,9 @@
 .row
   h1 =@category.name
-  - if @category.parent.present?
-    h2 ="Supercategory: #{@category.parent.name}"
+  = link_to "Edit", edit_category_path(@category), class: "btn btn-default"
+  button.btn.btn-danger data-toggle="modal" data-target="#delete_confirmation" ="Delete"
+  - if @category.respond_to?(:parent)
+    p ="Supercategory: #{@category.parent.name}"
 
   .x_panel
     .x_title
@@ -16,4 +18,17 @@
           - @category.children.each do |child|
             tr
               td =child.id
-              td =link_to child.name, category_path(child)
+              td =child.name
+              / 今の所カテゴリは２段階まで
+                td =link_to child.name, category_path(child)
+
+.modal.fade#delete_confirmation
+  .modal-dialog
+    .modal-content
+      .modal-body
+        h2 このカテゴリとサブカテゴリを削除してもよろしいですか？
+      .modal-footer
+        = link_to category_path(@category), method: :delete, class: "btn btn-danger"
+          | はい
+        button.btn.btn-default type="button" data-dismiss="modal"
+          | いいえ

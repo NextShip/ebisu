@@ -1,6 +1,7 @@
 .nested-fields
+  = f.hidden_field :type, value: Ebisu::Category::Kind.to_s
   .form-group
     = f.label :name
     = f.text_field :name
     span
-      = link_to_remove_association "remove subcategory", f
+      = link_to_remove_association "Remove", f
