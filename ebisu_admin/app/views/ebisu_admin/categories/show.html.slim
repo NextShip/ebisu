@@ -1,6 +1,6 @@
 .row
   h1 =@category.name
-  - if @category.parent.present?
+  - if @category.respond_to?(:parent)
     h2 ="Supercategory: #{@category.parent.name}"
 
   .x_panel

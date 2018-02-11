@@ -1,7 +1,8 @@
 .row
   h1 New Category
 
-  = form_for @category do |form|
+  = form_with model: @category, url: categories_path, local: true do |form|
+    = form.hidden_field :type, value: Ebisu::Category::Sort.to_s
     .form-group
       = form.label :name, class: "col-md-2"
       = form.text_field :name, class: "form-control"
@@ -15,7 +16,7 @@
           = form.fields_for :children do |f|
             = render 'child_fields', f: f
           .links
-            = link_to_add_association 'add subcategory', form, :children
+            = link_to_add_association 'Add', form, :children
 
     .form-group
       = form.submit "Submit", class: "btn btn-success"

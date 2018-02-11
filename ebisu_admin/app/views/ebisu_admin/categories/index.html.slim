@@ -8,13 +8,8 @@
             tr
               th= '#'
               th= t('name')
-              th= t('parent')
           tbody
             - @categories.each do |category|
               tr
                 td= category.id
                 td= link_to category.name, category_path(category)
-                - if category.parent.present?
-                  td= link_to category.parent.name, category_path(category.parent)
-                - else
-                	td -
