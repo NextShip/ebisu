@@ -4,22 +4,26 @@ module EbisuAdmin
   class ArticlesController < ApplicationController
     def index
       @articles = Ebisu::Article.all
+      authorize Ebisu::Article
     end
 
     def show
       @article = Ebisu::Article.find(params[:id])
+      authorize @article
     end
 
     def new
       @article = Ebisu::Article.new
       @article.build_paragraph(type: "Ebisu::Paragraph::Headline")
       @article.build_paragraph(type: "Ebisu::Paragraph::Body")
+      authorize @article
     end
 
     def create
       attributes = article_params
       @article = Ebisu::Article.new(attributes)
       @article.user = current_user
+      authorize @article
 
       if @article.save
         redirect_to @article
@@ -31,11 +35,13 @@ module EbisuAdmin
 
     def edit
       @article = Ebisu::Article.find(params[:id])
+      authorize @article
     end
 
     def update
       attributes = article_params
       @article = Ebisu::Article.find(params[:id])
+      authorize @article
 
       if @article.update_attributes(attributes)
         redirect_to @article
@@ -47,6 +53,7 @@ module EbisuAdmin
 
     def destroy
       @article = Ebisu::Article.find(params[:id])
+      authorize @article
       if @article.destroy
         redirect_to articles_path
       else
