@@ -38,6 +38,16 @@ module EbisuAdmin
       end
     end
 
+    def destroy
+      @category = Ebisu::Category.find(params[:id])
+      if @category.destroy
+        redirect_to categories_path
+      else
+        flash.now[:alert] = @category.errors.full_messages
+        redirect_to @category
+      end
+    end
+
     private
     def category_params
       params.require(:category_sort).permit(:type, :name, children_attributes: [:id, :type, :name, :_destroy])
