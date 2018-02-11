@@ -1,0 +1,5 @@
+.row
+  h1 Edit #{@category.name}
+
+  = form_with model: @category, url: category_path(@category), local: true do |form|
+    = render 'sort_form', sort: @category, form: form

@@ -6,7 +6,7 @@ class Ebisu::CategoryDecorator < Draper::Decorator
     ancestors = []
     while category
       ancestors.unshift category.name
-      category = category.parent
+      category = category.respond_to?(:parent) ? category.parent : nil
     end
 
     ancestors.join(' - ')
