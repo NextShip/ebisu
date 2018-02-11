@@ -4,18 +4,22 @@ module EbisuAdmin
   class CategoriesController < ApplicationController
     def index
       @categories = Ebisu::Category::Sort.all
+      authorize Ebisu::Category
     end
 
     def show
       @category = Ebisu::Category.find(params[:id])
+      authorize Ebisu::Category
     end
 
     def new
       @category = Ebisu::Category::Sort.new
+      authorize Ebisu::Category
     end
 
     def create
       @category = Ebisu::Category::Sort.new(category_params)
+      authorize Ebisu::Category
       if @category.save
         redirect_to categories_path
       else
@@ -26,10 +30,12 @@ module EbisuAdmin
 
     def edit
       @category = Ebisu::Category.find(params[:id])
+      authorize Ebisu::Category
     end
 
     def update
       @category = Ebisu::Category.find(params[:id])
+      authorize Ebisu::Category
       if @category.update(category_params)
         redirect_to category_path(@category)
       else
@@ -40,6 +46,7 @@ module EbisuAdmin
 
     def destroy
       @category = Ebisu::Category.find(params[:id])
+      authorize Ebisu::Category
       if @category.destroy
         redirect_to categories_path
       else
