@@ -1,7 +1,10 @@
 .row
   = link_to "View in App", ebisu.article_path(@article), { class: "btn btn-default" }
   h1= @article.title
-  p= "User: #{@article.user.decorate.name_or_email}"
+  - if User.method_defined?(:name)
+    p= "User: #{@article.user.name}"
+  - else
+    p= "User: #{@article.user.email}"
   p= @article.category.name
   p= @article.abstract
   - @article.paragraphs.rank(:position).each do |paragraph|
