@@ -1,5 +1,5 @@
 .row
   h1 New Category
 
-  = form_with model: @category, url: categories_path, local: true do |form|
-    = render 'sort_form', sort: @category, form: form
+  = form_with scope: :category, model: @category, url: categories_path, local: true do |form|
+    = render "#{form.object.type.constantize.model_name.human.downcase}_form", category: @category, form: form
