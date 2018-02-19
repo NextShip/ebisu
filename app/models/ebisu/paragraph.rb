@@ -14,6 +14,7 @@ module Ebisu
 
     SUBCLASSES = %w(
       Ebisu::Paragraph::Headline
+      Ebisu::Paragraph::Subheadline
       Ebisu::Paragraph::Body
       Ebisu::Paragraph::Figure
       Ebisu::Paragraph::Quotation
