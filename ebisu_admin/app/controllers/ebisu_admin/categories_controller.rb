@@ -57,7 +57,7 @@ module EbisuAdmin
 
     private
     def category_params
-      params.require(:category_sort).permit(:type, :name, children_attributes: [:id, :type, :name, :_destroy])
+      params.require(:category).permit(:type, :name, :description, children_attributes: [:id, :type, :name, :_destroy])
     end
   end
 end

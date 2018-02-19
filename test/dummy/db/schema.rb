@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180219024310) do
+ActiveRecord::Schema.define(version: 20180219051148) do
 
   create_table "ebisu_article_tags", force: :cascade do |t|
     t.integer "article_id"
@@ -19,8 +19,19 @@ ActiveRecord::Schema.define(version: 20180219024310) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "ebisu_articles" because of following StandardError
-#   Unknown type 'bool' for column 'is_published'
+  create_table "ebisu_articles", force: :cascade do |t|
+    t.string "title"
+    t.text "abstract"
+    t.string "image"
+    t.integer "category_id"
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_uid"
+    t.integer "impressions_count", default: 0
+    t.integer "user_id"
+    t.boolean "is_published", default: false, null: false
+  end
 
   create_table "ebisu_bodies", force: :cascade do |t|
     t.integer "paragraph_id"
@@ -35,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180219024310) do
     t.datetime "updated_at", null: false
     t.integer "parent_id"
     t.string "type"
+    t.text "description"
   end
 
   create_table "ebisu_figures", force: :cascade do |t|

@@ -3,23 +3,28 @@
   = link_to "Edit", edit_category_path(@category), class: "btn btn-default"
   button.btn.btn-danger data-toggle="modal" data-target="#delete_confirmation" ="Delete"
   - if @category.respond_to?(:parent)
-    p ="Supercategory: #{@category.parent.name}"
+    p
+      span ="Supercategory: "
+      span
+        = link_to @category.parent.name, category_path(@category.parent)
 
-  .x_panel
-    .x_title
-      h3 ="Subcategories"
-    .x_content
-      table.table
-        thead
-          tr
-            th #
-            th =Ebisu::Category.model_name.human
-        tbody
-          - @category.children.each do |child|
+  p =@category.description
+
+  / 今のところカテゴリは2段階まで
+  - if !@category.respond_to?(:parent)
+    .x_panel
+      .x_title
+        h3 ="Subcategories"
+      .x_content
+        table.table
+          thead
             tr
-              td =child.id
-              td =child.name
-              / 今の所カテゴリは２段階まで
+              th #
+              th =Ebisu::Category.human_attribute_name :name
+          tbody
+            - @category.children.each do |child|
+              tr
+                td =child.id
                 td =link_to child.name, category_path(child)
 
 .modal.fade#delete_confirmation
