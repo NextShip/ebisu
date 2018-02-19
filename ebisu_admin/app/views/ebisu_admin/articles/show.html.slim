@@ -1,5 +1,9 @@
 .row
   = link_to "View in App", ebisu.article_path(@article), { class: "btn btn-default" }
+  - if @article.is_published
+    button.btn.btn-success disabled=true ="Published"
+  - else
+    = link_to "Publish", publish_article_path(@article), { class: "btn btn-success" }
   h1= @article.title
   = link_to @article.image.url
     = image_tag @article.image.thumb("100x100").url
@@ -17,6 +21,7 @@
   - if policy(@article).destroy?
     button.btn.btn-link data-toggle="modal" data-target="#delete_confirmation"
       i.fa.fa-trash
+  = @article.published_at
 
 .modal.fade#delete_confirmation
   .modal-dialog

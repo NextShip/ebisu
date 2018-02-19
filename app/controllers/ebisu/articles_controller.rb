@@ -4,13 +4,15 @@ require "browser"
 module Ebisu
   class ArticlesController < ApplicationController
     def index
-      @articles = Article.all
+      @articles = Article.published
+      authorize @articles
       # ordered by viewed
       # @most_viewed_in_month = Article.where(published_at: [Date.today.beginning_of_month..Date.today]).order(impressions_count: :desc).take(3)
     end
 
     def show
       @article = Article.find(params[:id])
+      authorize @article
       impressionist @article, nil, unique: [:session_hash]
     end
   end
