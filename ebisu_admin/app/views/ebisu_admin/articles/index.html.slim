@@ -9,11 +9,13 @@
               th= '#'
               th= t('title')
               th
+              th
           tbody
             - @articles.each do |article|
               tr
                 td= article.id
                 td= link_to article.title, article_path(article)
+                td= link_to "View in App", ebisu.article_path(article), { class: "btn btn-xs btn-default" }
                 - if article.is_published
                   td
                     button.btn.btn-xs.btn-default disabled=true Published
