@@ -34,7 +34,7 @@ module Ebisu
     end
 
     def self.recommendations
-      all
+      published
     end
 
     def self.template_article
@@ -55,7 +55,6 @@ module Ebisu
       if !is_published_was && is_published
         self.published_at = Time.zone.now
       end
-      p self.inspect
       self
     end
   end
