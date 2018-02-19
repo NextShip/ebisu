@@ -20,12 +20,18 @@ module Ebisu
     validates :category_id, presence: true
     validates :user_id, presence: true
 
+    # scopes
+    scope :published, -> {
+      where(is_published: true)
+    }
+
+    # class methods
     def self.toparticles()
       self.all.take(3)
     end
 
-    def build_paragraph(params = {})
-      paragraphs.build(type: params[:type], position: params[:position], delegate_attributes: { content: params[:content] })
+    def self.recommendations
+      all
     end
 
     def self.template_article
@@ -36,8 +42,9 @@ module Ebisu
       end
     end
 
-    def self.recommendations
-      all
+    # instance methods
+    def build_paragraph(params = {})
+      paragraphs.build(type: params[:type], position: params[:position], delegate_attributes: { content: params[:content] })
     end
   end
 end
