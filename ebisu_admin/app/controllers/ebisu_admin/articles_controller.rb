@@ -62,9 +62,24 @@ module EbisuAdmin
       end
     end
 
+    def publish
+      @article = Ebisu::Article.find(params[:id])
+      if @article.is_published
+        flash[:alert] = "This article has been published."
+      else
+        @article.is_published = true
+        if @article.save
+          flash[:notice] = "This article is published."
+        else
+          flash[:alert] = @article.errors.full_messages
+        end
+      end
+      redirect_to @article
+    end
+
     private
     def article_params
-      params.require(:article).permit(:title, :abstract, :image, :category_id, :published_at, tag_ids: [], paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id, :source, :source_url ]])
+      params.require(:article).permit(:title, :abstract, :image, :category_id, :is_published, tag_ids: [], paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id, :source, :source_url ]])
     end
   end
 end
