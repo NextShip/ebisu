@@ -30,7 +30,7 @@ module Ebisu
 
     # class methods
     def self.toparticles()
-      self.all.take(3)
+      self.published.take(3)
     end
 
     def self.recommendations
