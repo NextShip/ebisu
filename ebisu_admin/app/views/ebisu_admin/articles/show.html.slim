@@ -1,6 +1,8 @@
 .row
   = link_to "View in App", ebisu.article_path(@article), { class: "btn btn-default" }
   h1= @article.title
+  = link_to @article.image.url
+    = image_tag @article.image.thumb("100x100").url
   - if User.method_defined?(:name)
     p= "User: #{@article.user.name}"
   - else
