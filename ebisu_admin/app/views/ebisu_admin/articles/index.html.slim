@@ -8,8 +8,14 @@
             tr
               th= '#'
               th= t('title')
+              th
           tbody
             - @articles.each do |article|
               tr
                 td= article.id
                 td= link_to article.title, article_path(article)
+                - if article.is_published
+                  td
+                    button.btn.btn-xs.btn-default disabled=true Published
+                - else
+                  td= link_to "Publish", publish_article_path(article), { class: "btn btn-xs btn-success "}
