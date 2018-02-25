@@ -7,4 +7,5 @@ EbisuAdmin::Engine.routes.draw do
   	end
   end
   resources :categories
+  resources :tags
 end

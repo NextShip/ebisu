@@ -1,0 +1,5 @@
+.row
+  h1 New Tag
+
+  = form_with model: @tag, local: true do |form|
+    = render "form", tag: @tag, form: form

@@ -1,0 +1,34 @@
+.row
+  .col-md-12
+    h1= t('tags')
+    .x_panel
+      .x_content
+        table.table
+          thead
+            tr
+              th= '#'
+              th= t('name')
+              th
+              th
+          tbody
+            - @tags.each do |tag|
+              tr
+                td= tag.id
+                td= tag.name
+                td
+                  = link_to edit_tag_path(tag)
+                    i.fa.fa-edit.btn
+                td
+                  i.fa.fa-trash.btn data-toggle="modal" data-target="#delete_confirmation"
+                  / タグが増えてパフォーマンスが問題になったら修正する
+                  .modal.fade#delete_confirmation
+                    .modal-dialog
+                      .modal-content
+                        .modal-body
+                          h2 このタグを削除してもよろしいですか？
+                        .modal-footer
+                          = link_to tag_path(tag), method: :delete, class: "btn btn-danger"
+                            | はい
+                          button.btn.btn-default type="button" data-dismiss="modal"
+                            | いいえ
+
