@@ -17,12 +17,21 @@
         - if current_user.has_role? :admin
           li
             = link_to categories_path
-              i.fa.fa-object-group
+              i.fa.fa-bars
               | カテゴリ一覧
           li
             = link_to new_category_path
               i.fa.fa-code
               | カテゴリ作成
+          li
+            = link_to tags_path
+              i.fa.fa-bars
+              | タグ一覧
+          li
+            = link_to new_tag_path
+              i.fa.fa-tag
+              | タグ作成
+
   .sidebar-footer.hidden-small
     = link_to main_app.destroy_user_session_path, method: :delete, class: 'data-toggle="tooltip" data-placement="top" title="Logout'
       span.glyphicon.glyphicon-off[aria-hidden="true"]
