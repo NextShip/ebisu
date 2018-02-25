@@ -99,9 +99,9 @@ javascript:
     .form-group
       = form.label 'author', class: "col-md-2"
       - if User.method_defined?(:name)
-        = form.collection_select :user_id, User.with_role(:writer), :id, :name, { selected: current_user.id }, { class: "form-control" }
+        = form.collection_select :user_id, User.with_role(:writer), :id, :name, {}, { class: "form-control" }
       - else
-        = form.collection_select :user_id, User.with_role(:writer), :id, :email, { selected: current_user.id }, { class: "form-control" }
+        = form.collection_select :user_id, User.with_role(:writer), :id, :email, {}, { class: "form-control" }
 
   .form-group
     = form.label 'abstract', class: "col-md-2"
