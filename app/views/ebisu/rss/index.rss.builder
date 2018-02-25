@@ -14,7 +14,7 @@ xml.rss("version" => "2.0") do
         end
         xml.pubDate article.published_at.strftime("%a, %d %b %Y %H:%M:%S %Z")
         xml.link article_url(article)
-        xml.guid article.id
+        xml.guid article_url(article)
       end
     end
   end
