@@ -1,8 +1,5 @@
 module Ebisu
   class Article < ApplicationRecord
-    # callbacks
-    before_save :set_publication_date
-
     # add-ons
     is_impressionable counter_cache: true
 
@@ -48,14 +45,6 @@ module Ebisu
     # instance methods
     def build_paragraph(params = {})
       paragraphs.build(type: params[:type], position: params[:position], delegate_attributes: { content: params[:content] })
-    end
-
-    private
-    def set_publication_date
-      if !is_published_was && is_published
-        self.published_at = Time.zone.now
-      end
-      self
     end
   end
 end
