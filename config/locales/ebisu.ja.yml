@@ -1,0 +1,11 @@
+ja:
+  ebisu:
+    dictionary:
+      required_reading_time:
+        less_than_a_minutes: "1分以内"
+        read_in: "約%{minutes}分"
+
+    activerecord:
+      attributes:
+        figure:
+          source: 出典
