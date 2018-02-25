@@ -22,7 +22,7 @@ PATH
 PATH
   remote: ebisu_admin
   specs:
-    ebisu_admin (0.2.2)
+    ebisu_admin (0.3.0)
       gentelella-rails
       jquery-ui-rails
       rails (~> 5.1.4)
