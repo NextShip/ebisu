@@ -14,6 +14,7 @@ module EbisuAdmin
 
     def new
       @article = Ebisu::Article.new
+      @article.user = current_user
       @article.build_paragraph(type: "Ebisu::Paragraph::Headline")
       @article.build_paragraph(type: "Ebisu::Paragraph::Body")
       authorize @article
@@ -79,7 +80,7 @@ module EbisuAdmin
 
     private
     def article_params
-      params.require(:article).permit(:title, :abstract, :image, :category_id, :is_published, tag_ids: [], paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id, :source, :source_url ]])
+      params.require(:article).permit(:title, :abstract, :image, :category_id, :user_id, :is_published, tag_ids: [], paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id, :source, :source_url ]])
     end
   end
 end
