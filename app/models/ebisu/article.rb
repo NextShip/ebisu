@@ -46,5 +46,9 @@ module Ebisu
     def build_paragraph(params = {})
       paragraphs.build(type: params[:type], position: params[:position], delegate_attributes: { content: params[:content] })
     end
+
+    def body_html
+      paragraphs.rank(:position).map {|p| p.decorate.content}.join
+    end
   end
 end
