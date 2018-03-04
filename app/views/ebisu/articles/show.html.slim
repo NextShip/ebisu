@@ -8,8 +8,7 @@
     p =@article.impressionist_count
     p =@article.decorate.legible_required_reading_time
 
-    - @article.paragraphs.rank(:position).each do |paragraph|
-      = paragraph.decorate.content
+    = render 'shared/ebisu/article_body', article: @article
 
   aside.sidebar
     = render 'shared/ebisu/sidebar'
