@@ -12,6 +12,7 @@
   - else
     p= "User: #{@article.user.email}"
   p= @article.category.name
+  p published at #{@article.published_at.strftime("%Y/%m/%d")}
   p= @article.abstract
   - @article.paragraphs.rank(:position).each do |paragraph|
     = paragraph.decorate.content
@@ -21,7 +22,6 @@
   - if policy(@article).destroy?
     button.btn.btn-link data-toggle="modal" data-target="#delete_confirmation"
       i.fa.fa-trash
-  = @article.published_at
 
 .modal.fade#delete_confirmation
   .modal-dialog
