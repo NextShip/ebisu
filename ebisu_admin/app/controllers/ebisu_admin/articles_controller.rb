@@ -65,10 +65,10 @@ module EbisuAdmin
 
     def publish
       @article = Ebisu::Article.find(params[:id])
-      if @article.is_published
+      if @article.published?
         flash[:alert] = "This article has been published."
       else
-        @article.is_published = true
+        @article.published = true
         if @article.save
           flash[:notice] = "This article is published."
         else
@@ -80,7 +80,7 @@ module EbisuAdmin
 
     private
     def article_params
-      params.require(:article).permit(:title, :abstract, :image, :category_id, :user_id, :is_published, tag_ids: [], paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id, :source, :source_url ]])
+      params.require(:article).permit(:title, :abstract, :image, :category_id, :user_id, :published, tag_ids: [], paragraphs_attributes: [:template, :type, :position, :id, :_destroy, delegate_attributes: [ :content, :id, :source, :source_url ]])
     end
   end
 end
