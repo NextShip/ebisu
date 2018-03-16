@@ -22,7 +22,7 @@ module Ebisu
 
     # scopes
     scope :published, -> {
-      where(is_published: true)
+      where(published: true)
     }
 
     # class methods

@@ -1,6 +1,6 @@
 .row
   = link_to "View in App", ebisu.article_path(@article), { class: "btn btn-default" }
-  - if @article.is_published
+  - if @article.published?
     button.btn.btn-success disabled=true ="Published"
   - else
     = link_to "Publish", publish_article_path(@article), { class: "btn btn-success" }

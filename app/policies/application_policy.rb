@@ -12,7 +12,7 @@ class ApplicationPolicy
 
   def show?
     scope.where(:id => record.id).exists? &&
-      (record.is_published || admin? || (writer? && record.user == user))
+      (record.published? || admin? || (writer? && record.user == user))
   end
 
   def create?
