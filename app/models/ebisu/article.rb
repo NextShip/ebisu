@@ -19,6 +19,7 @@ module Ebisu
     validates :abstract, presence: true
     validates :category_id, presence: true
     validates :user_id, presence: true
+    validates :published_at, presence: true
 
     # scopes
     scope :published, -> {
