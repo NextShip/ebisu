@@ -12,7 +12,7 @@
   - else
     p= "User: #{@article.user.email}"
   p= @article.category.name
-  p published at #{@article.published_at.strftime("%Y/%m/%d")}
+  p published at #{@article.published_at&.strftime("%Y/%m/%d")}
   p= @article.abstract
   - @article.paragraphs.rank(:position).each do |paragraph|
     = paragraph.decorate.content
