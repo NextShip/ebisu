@@ -14,6 +14,12 @@ module Ebisu
       @article = Article.find(params[:id])
       authorize @article
       impressionist @article, nil, unique: [:session_hash]
+
+      category = @article.category
+      add_breadcrumb "Top", articles_path
+      add_breadcrumb category.parent.name, category_path(category.parent) if category.respond_to?(:parent)
+      add_breadcrumb category.name, category_path(@article.category) if category
+      add_breadcrumb @article.title
     end
   end
 end
