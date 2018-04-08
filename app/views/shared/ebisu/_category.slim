@@ -4,11 +4,11 @@
     - Ebisu::Category.all.each do |category|
       - if @category.present? && @category == category
         li.current
-          = link_to category_path(category) do
+          = link_to ebisu.category_path(category) do
             .category-name
               = category.name
       - else
         li
-          = link_to category_path(category) do
+          = link_to ebisu.category_path(category) do
             .category-name
               = category.name
