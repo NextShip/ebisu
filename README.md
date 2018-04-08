@@ -38,5 +38,13 @@ ebisuのversionを上げる手順
 5. commitしてpush
 ```
 
+## Ebisu Breadcrumbs
+各記事・カテゴリのパンくずは `breadcrumbs_on_rails` というgemで管理されている。
+ebisuの各viewを上書きした場合以下の行を書くことでebisuのcontrollerが生成したパンくずを表示できる。
+```
+= render_breadcrumbs builder: Ebisu::BreadcrumbsBuilder
+```
+また、このとき `views/shared/ebisu/breadcrumbs` を使用する。（詳細は[こちら](https://github.com/weppos/breadcrumbs_on_rails)を参照）
+
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
