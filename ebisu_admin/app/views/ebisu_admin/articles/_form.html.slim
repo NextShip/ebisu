@@ -123,7 +123,7 @@ javascript:
     = form.collection_select :tag_ids, Ebisu::Tag.all, :id, :name, { prompt: "選択してください" }, { class: "form-control searchable", multiple: true }
   .form-group
     = form.label :published_at
-    = form.date_field :published_at, class: "form-control datepicker", value: (form.object.published_at || Time.now).strftime("%Y/%m/%d")
+    = form.text_field :published_at, class: "form-control datepicker", value: (form.object.published_at || Time.now).strftime("%Y/%m/%d")
   .btn-toolbar.links
     .btn-group
       - Ebisu::Paragraph::SUBCLASSES.each do |klass|
