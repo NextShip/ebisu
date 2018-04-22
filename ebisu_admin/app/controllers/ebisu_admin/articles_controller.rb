@@ -29,7 +29,6 @@ module EbisuAdmin
       if @article.save
         redirect_to @article
       else
-        flash.now[:alert] = @article.errors.full_messages.join(' ')
         render :new
       end
     end
@@ -47,7 +46,6 @@ module EbisuAdmin
       if @article.update_attributes(attributes)
         redirect_to @article
       else
-        flash.now[:alert] = @article.errors.full_messages
         render :edit
       end
     end

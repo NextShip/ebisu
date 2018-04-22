@@ -1,4 +1,15 @@
 ja:
+  activerecord:
+    models:
+      ebisu/article: 記事
+      ebisu/category: カテゴリ
+    attributes:
+      ebisu/article:
+        abstract: 概要
+        category: カテゴリ
+        title: タイトル
+      ebisu/article/paragraphs/delegate:
+        content: 文章
   ebisu:
     dictionary:
       required_reading_time:
