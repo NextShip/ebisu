@@ -136,7 +136,11 @@ javascript:
       div id="#{f.object.type.constantize.model_name.human.downcase}-template" style="display: none;"
         = render "template_form", type: f.object.type, form: f
   ul#paragraphs style="list-style-type: none; padding: 0"
-    = form.fields_for :paragraphs, article.paragraphs.rank(:position) do |f|
-      = render "template_form", type: f.object.type, form: f
+    - if article.paragraphs.rank(:position).present?
+      = form.fields_for :paragraphs, article.paragraphs.rank(:position) do |f|
+        = render "template_form", type: f.object.type, form: f
+    - else
+      = form.fields_for :paragraphs, article.paragraphs do |f|
+        = render "template_form", type: f.object.type, form: f
   .form-group
     = form.submit "Submit", class: "btn btn-success"
