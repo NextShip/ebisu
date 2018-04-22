@@ -1,0 +1,7 @@
+- if scope.errors.any?
+  .error_explanation
+    .alert.alert-danger
+      = "The form contains #{pluralize(scope.errors.count, "error")}"
+    ul
+      - scope.errors.full_messages.each do |msg|
+        li = msg
