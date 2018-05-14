@@ -9,11 +9,11 @@ xml.rss(version: "2.0", 'xmlns:nordot': "https://www.nordot.jp/inputrss/strict/1
         xml.nordot :fedAt, article.updated_at.httpdate
         xml.nordot :deleted, false
         xml.nordot :title, article.title
-        # xml.nordot :subtitle, ""
+        xml.nordot :subtitle, article.abstract
         xml.nordot :status, "public"
         xml.nordot :bodyType, "nordot_html"
         xml.nordot :body do
-          xml.cdata! article.body_html
+          xml.cdata! article.nordot_html
         end
         xml.nordot :publishedAt, article.published_at.httpdate
         # xml.nordot :expiredAt, ""
