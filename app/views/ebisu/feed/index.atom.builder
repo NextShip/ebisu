@@ -18,7 +18,7 @@ xml.feed(
       xml.title article.title
       xml.summary article.abstract
       xml.content(type: :html) do
-        xml.cdata! article.body_html
+        xml.cdata! article.decorate.body_html
       end
       xml.author do
         xml.name article.user.email
