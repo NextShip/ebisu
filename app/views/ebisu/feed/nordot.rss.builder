@@ -13,7 +13,7 @@ xml.rss(version: "2.0", 'xmlns:nordot': "https://www.nordot.jp/inputrss/strict/1
         xml.nordot :status, "public"
         xml.nordot :bodyType, "nordot_html"
         xml.nordot :body do
-          xml.cdata! article.body_html
+          xml.cdata! article.decorate.body_html
         end
         xml.nordot :publishedAt, article.published_at.httpdate
         # xml.nordot :expiredAt, ""
