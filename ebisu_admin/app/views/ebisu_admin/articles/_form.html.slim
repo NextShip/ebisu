@@ -127,13 +127,13 @@ javascript:
   .btn-toolbar.links
     .btn-group
       - Ebisu::Paragraph::SUBCLASSES.each do |klass|
-        a.btn onclick="add_form($('##{klass.constantize.model_name.human.downcase}-template').children().first())"
+        a.btn onclick="add_form($('##{template_id(klass)}').children().first())"
           = klass.constantize.model_name.human
   #templates
     #number-of-templates data-value=Ebisu::Article.template_article.paragraphs.size
     = form.fields_for :paragraphs, Ebisu::Article.template_article.paragraphs do |f|
       = f.hidden_field :template?, value: true
-      div id="#{f.object.type.constantize.model_name.human.downcase}-template" style="display: none;"
+      div id=template_id(f.object.type) style="display: none;"
         = render "template_form", type: f.object.type, form: f
   ul#paragraphs style="list-style-type: none; padding: 0"
     - if article.paragraphs.rank(:position).present?

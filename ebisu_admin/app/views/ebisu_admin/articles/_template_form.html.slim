@@ -9,7 +9,7 @@ li.form-root
             ul.dropdown-menu role="menu"
               - Ebisu::Paragraph::SUBCLASSES.each do |klass|
                 li
-                  a onclick="insert_after($(this).closest('.form-root'), $('##{klass.constantize.model_name.human.downcase}-template').children().first())"
+                  a onclick="insert_after($(this).closest('.form-root'), $('##{template_id(klass)}').children().first())"
                     = klass.constantize.model_name.human
         li
           a onclick="move_up($(this).closest('.form-root'));"

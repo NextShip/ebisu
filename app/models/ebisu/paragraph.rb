@@ -20,6 +20,7 @@ module Ebisu
       Ebisu::Paragraph::Quotation
       Ebisu::Paragraph::Tweet
       Ebisu::Paragraph::Youtube
+      Ebisu::Paragraph::ExternalLink
     )
   end
 end

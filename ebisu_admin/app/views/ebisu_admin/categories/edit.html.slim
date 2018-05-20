@@ -2,4 +2,4 @@
   h1 Edit Category
 
   = form_with scope: :category, model: @category, url: category_path(@category), local: true do |form|
-    = render "#{form.object.type.constantize.model_name.human.downcase}_form", category: @category, form: form
+    = render "#{form.object.type.underscore}_form", category: @category, form: form
