@@ -5,7 +5,7 @@ module Ebisu
     layout false
 
     def index
-      @articles = Ebisu::Article.published.limit(100)
+      @articles = Ebisu::Article.published.page(params[:page])
 
       respond_to do |format|
         format.atom
@@ -13,7 +13,7 @@ module Ebisu
     end
 
     def nordot
-      @articles = Ebisu::Article.published.limit(100)
+      @articles = Ebisu::Article.published.page(params[:page])
 
       respond_to do |format|
         format.rss
