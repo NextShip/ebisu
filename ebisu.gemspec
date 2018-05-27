@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency "draper"
   s.add_dependency "ebisu_admin"
   s.add_dependency "impressionist", "~> 1.6"
+  s.add_dependency "kaminari"
   s.add_dependency "mime-types"
   s.add_dependency "pundit"
   s.add_dependency "rails", "~> 5.1.3"
