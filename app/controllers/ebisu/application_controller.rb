@@ -10,7 +10,6 @@ module Ebisu
     private
 
     def set_view_variant
-      browser = Browser.new("Some User Agent", accept_language: "en-us")
       if browser.device.mobile? != true && browser.device.tablet? != true
         request.variant = :pc
       end
