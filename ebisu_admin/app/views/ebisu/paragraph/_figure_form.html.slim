@@ -1,4 +1,4 @@
-- if form.object.content.present?
+- if form.object.content_stored?
   = image_tag form.object.content.url
 - else
   = form.file_field :content, class: "form-control"
