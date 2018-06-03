@@ -6,18 +6,19 @@
         table.table
           thead
             tr
-              th= '#'
-              th= t('title')
-              th
+              th= sort_link @q, :id, '#'
+              th= sort_link @q, :title, Ebisu::Article.human_attribute_name(:title)
+              th= sort_link @q, :published, Ebisu::Article.human_attribute_name(:published)
               th
           tbody
             - @articles.each do |article|
               tr
                 td= article.id
                 td= link_to article.title, article_path(article)
-                td= link_to "View in App", ebisu.article_path(article), { class: "btn btn-xs btn-default" }
                 - if article.published?
                   td
                     button.btn.btn-xs.btn-default disabled=true Published
                 - else
                   td= link_to "Publish", publish_article_path(article), { class: "btn btn-xs btn-success "}
+                td= link_to "View in App", ebisu.article_path(article), { class: "btn btn-xs btn-default" }
+        = paginate @articles
