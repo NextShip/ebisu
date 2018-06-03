@@ -3,7 +3,9 @@ require_dependency "ebisu_admin/application_controller"
 module EbisuAdmin
   class ArticlesController < ApplicationController
     def index
-      @articles = Ebisu::Article.all
+      @q = Ebisu::Article.ransack(params[:q])
+      @q.sorts = 'id desc' if @q.sorts.empty?
+      @articles = @q.result.page(params[:page])
       authorize Ebisu::Article
     end
 
