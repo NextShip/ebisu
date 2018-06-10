@@ -3,6 +3,7 @@ Ebisu::Engine.routes.draw do
   resources :feed, only: [:index], defaults: { format: :atom } do
     collection do
       get 'nordot', defaults: { format: :rss }
+      get 'gunocy', defaults: { format: :rss }
     end
   end
 

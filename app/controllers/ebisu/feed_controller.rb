@@ -19,5 +19,13 @@ module Ebisu
         format.rss
       end
     end
+
+    def gunocy
+      @articles = Ebisu::Article.published.page(params[:page])
+
+      respond_to do |format|
+        format.rss
+      end
+    end
   end
 end
