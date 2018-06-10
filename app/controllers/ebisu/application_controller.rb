@@ -1,5 +1,3 @@
-require "browser"
-
 module Ebisu
   class ApplicationController < ActionController::Base
     include Pundit
