@@ -4,6 +4,7 @@ Ebisu::Engine.routes.draw do
     collection do
       get 'nordot', defaults: { format: :rss }
       get 'gunocy', defaults: { format: :rss }
+      get 'snf', defaults: { format: :rss }
     end
   end
 
