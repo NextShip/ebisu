@@ -1,6 +1,7 @@
 require "ebisu/engine"
 
 require "breadcrumbs_on_rails"
+require "browser"
 require "cocoon"
 require "devise"
 require "dragonfly"
