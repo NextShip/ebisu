@@ -20,7 +20,7 @@ module Ebisu
       end
     end
 
-    def gunocy
+    def gunosy
       @articles = Ebisu::Article.published.page(params[:page])
 
       respond_to do |format|
