@@ -32,7 +32,7 @@ class Ebisu::ArticleDecorator < Draper::Decorator
       ga('create', '#{Ebisu.config.google_analytics_id}', 'auto');
       ga('require', 'displayfeatures');
       ga('set', 'referrer', 'http://www.smartnews.com/');
-      ga('send', 'pageview', '#{h.article_path(object)}');" 
+      ga('send', 'pageview', '#{h.ebisu.article_path(object)}');" 
     end
   end
 end

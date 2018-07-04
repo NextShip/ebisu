@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ebisu (0.8.20)
+    ebisu (0.8.21)
       breadcrumbs_on_rails
       browser
       cocoon
