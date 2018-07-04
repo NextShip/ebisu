@@ -21,4 +21,18 @@ class Ebisu::ArticleDecorator < Draper::Decorator
     body = object.paragraphs.rank(:position).map {|p| p.decorate.content}.join.html_safe
     eyecatch + body
   end
+
+  def analytics
+    h.tag.script do
+      "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ 
+      ga('create', '#{Ebisu.config.google_analytics_id}', 'auto');
+      ga('require', 'displayfeatures');
+      ga('set', 'referrer', 'http://www.smartnews.com/');
+      ga('send', 'pageview', '#{article_path(object)}');" 
+    end
+  end
 end

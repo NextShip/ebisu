@@ -41,7 +41,9 @@ xml.rss(version: "2.0",
         # xml.snf :video
         # xml.media :status
         # xml.snf :advertisement
-        # xml.snf :analytics
+        xml.snf :analytics do
+          xml.cdata! article.decorate.analytics
+        end
       end
     end
   end

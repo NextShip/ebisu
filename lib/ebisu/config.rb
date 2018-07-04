@@ -8,6 +8,7 @@ module Ebisu
     config_accessor :rss_feed_title
     config_accessor :rss_feed_description
     config_accessor :logo_url
+    config_accessor :google_analytics_id
   end
   
   def self.configure(&block)
