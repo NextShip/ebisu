@@ -13,4 +13,5 @@ Ebisu.configure do |config|
   # Information for RSS generator.
   config.rss_feed_title = 'Ebisu RSS Feed'
   config.rss_feed_description = "The latest articles powered by Ebisu."
+  config.logo_url = 'https://github.com/NextShip/ebisu'
 end
