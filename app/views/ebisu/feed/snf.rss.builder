@@ -17,6 +17,7 @@ xml.rss(version: "2.0",
     # xml.ttl
     xml.snf :logo do
       xml.url Ebisu.config.logo_url
+    end
 
     @articles.each do |article|
       xml.item do
