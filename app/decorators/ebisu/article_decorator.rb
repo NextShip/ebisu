@@ -15,7 +15,7 @@ class Ebisu::ArticleDecorator < Draper::Decorator
 
   def body_html
     eyecatch = h.tag.figure do
-      h.concat h.tag.img object.image.url
+      h.concat h.content_tag(:img, '', {src: object.image.url})
       h.concat h.tag.figcaption object.title
     end
     body = object.paragraphs.rank(:position).map {|p| p.decorate.content}.join.html_safe

@@ -23,7 +23,7 @@ xml.rss(version: "2.0",
       xml.item do
         # required
         xml.title article.title
-        xml.link article_url(article)
+        xml.link ebisu.article_url(article)
         xml.pubDate article.published_at
         xml.content :encoded do
           xml.cdata! article.decorate.body_html
