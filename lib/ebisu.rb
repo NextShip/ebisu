@@ -14,6 +14,7 @@ require "pundit"
 require "ranked-model"
 require "rolify"
 require "slim-rails"
+require "meta-tags"
 
 OEmbed::Providers.register_all
 
