@@ -20,6 +20,8 @@ module Ebisu
       add_breadcrumb category.parent.name, category_path(category.parent) if category.respond_to?(:parent)
       add_breadcrumb category.name, category_path(@article.category) if category
       add_breadcrumb @article.title
+
+      set_meta_tags title: @article.title, description: @article.abstract
     end
   end
 end

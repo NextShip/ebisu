@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
   s.add_dependency "ruby-oembed"
   s.add_dependency "sass-rails", '~> 5.0'
   s.add_dependency "slim-rails"
+  s.add_dependency "meta-tags"
 
   s.add_development_dependency "sqlite3"
 end
