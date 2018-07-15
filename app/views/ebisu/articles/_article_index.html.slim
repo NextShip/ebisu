@@ -1,0 +1,7 @@
+ul.article__index_headlines
+  - index.each do |headlines|
+    li.article__index_headline =headlines.first.content
+    - if headlines.count > 1
+      ul.article__index_subheadlines
+        - headlines[1..-1].each do |subheadline|
+          li.article__index_subheadline =subheadline.content
