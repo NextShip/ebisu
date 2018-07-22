@@ -4,16 +4,25 @@ require "browser"
 module Ebisu
   class ArticlesController < ApplicationController
     def index
-      @articles = Article.published
+      @articles = Article.published.page(params[:page])
       authorize @articles
       # ordered by viewed
       # @most_viewed_in_month = Article.where(published_at: [Date.today.beginning_of_month..Date.today]).order(impressions_count: :desc).take(3)
     end
 
     def show
-      @article = Article.find(params[:id])
+      @article = Article.includes(paragraphs: :delegate).find(params[:id])
       authorize @article
       impressionist @article, nil, unique: [:session_hash]
+
+      @index = []
+      @article.paragraphs.rank(:position).each do |paragraph|
+        if paragraph.is_a? Ebisu::Paragraph::Headline
+          @index.push([paragraph])
+        elsif paragraph.is_a? Ebisu::Paragraph::Subheadline
+          @index.last.push(paragraph)
+        end
+      end
 
       category = @article.category
       add_breadcrumb "Top", articles_path

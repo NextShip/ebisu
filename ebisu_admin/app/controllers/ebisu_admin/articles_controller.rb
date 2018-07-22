@@ -10,7 +10,7 @@ module EbisuAdmin
     end
 
     def show
-      @article = Ebisu::Article.find(params[:id])
+      @article = Ebisu::Article.eager_load(:paragraphs).preload(paragraphs: :delegate).find(params[:id])
       authorize @article
     end
 
@@ -36,7 +36,7 @@ module EbisuAdmin
     end
 
     def edit
-      @article = Ebisu::Article.find(params[:id])
+      @article = Ebisu::Article.eager_load(:paragraphs).preload(paragraphs: :delegate).find(params[:id])
       authorize @article
     end
 

@@ -10,6 +10,7 @@
     p =@article.impressionist_count
     p =@article.decorate.legible_required_reading_time
 
+    = render 'article_index', index: @index
     = render 'article_body', article: @article
 
   aside.sidebar
