@@ -11,7 +11,7 @@ module Ebisu
     end
 
     def show
-      @article = Article.find(params[:id])
+      @article = Article.includes(paragraphs: :delegate).find(params[:id])
       authorize @article
       impressionist @article, nil, unique: [:session_hash]
 
