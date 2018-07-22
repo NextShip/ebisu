@@ -26,7 +26,7 @@ module Ebisu
 
       category = @article.category
       add_breadcrumb "Top", articles_path
-      add_breadcrumb category.parent.name, category_path(category.parent) if category.respond_to?(:parent)
+      add_breadcrumb category.parent.name, category_path(category.parent) if category.respond_to?(:parent) && category.present?
       add_breadcrumb category.name, category_path(@article.category) if category
       add_breadcrumb @article.title
 
