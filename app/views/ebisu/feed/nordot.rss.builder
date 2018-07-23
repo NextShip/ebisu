@@ -9,7 +9,7 @@ xml.rss(version: "2.0", 'xmlns:nordot': "https://www.nordot.jp/inputrss/strict/1
         xml.nordot :fedAt, article.updated_at.httpdate
         xml.nordot :deleted, false
         xml.nordot :title, article.title
-        xml.nordot :subtitle, article.abstract
+        xml.nordot :subtitle, article.abstract.truncate(250)
         xml.nordot :status, "public"
         xml.nordot :bodyType, "nordot_html"
         xml.nordot :body do

@@ -23,7 +23,7 @@ module Ebisu
 
     # scopes
     scope :published, -> {
-      where(published: true)
+      where(published: true).order(published_at: :desc)
     }
 
     # class methods

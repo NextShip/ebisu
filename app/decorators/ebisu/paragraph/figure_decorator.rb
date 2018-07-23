@@ -3,7 +3,7 @@ class Ebisu::Paragraph::FigureDecorator < Ebisu::ParagraphDecorator
 
   def content
     h.content_tag(:figure, {class: "article__figure"}) do
-      h.concat h.content_tag(:img, '', {class: "article__image", src: object.content.url})
+      h.concat h.content_tag(:img, '', {class: "article__image", src: object.content.thumb('780x405#').url})
       if object.source_url.present? && object.source.present?
         h.concat (
           h.content_tag(:figcaption, {class: "article_figcaption"}) do
