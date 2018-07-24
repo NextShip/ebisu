@@ -1,5 +1,5 @@
 ul.article__index_headlines
-  - article.table_of_contents.paragraphs.each do |headlines|
+  - article.decorate.table_of_contents.each do |headlines|
     li.article__index_headline
       a href="#ebisu_paragraph_headline_#{headlines.first.id}"
         = headlines.first.content

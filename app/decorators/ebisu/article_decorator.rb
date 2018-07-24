@@ -43,6 +43,6 @@ class Ebisu::ArticleDecorator < Draper::Decorator
       elsif paragraph.is_a? Ebisu::Paragraph::Subheadline
         paragraph
       end
-    end
+    end.compact
   end
 end
