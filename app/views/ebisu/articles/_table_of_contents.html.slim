@@ -1,11 +1,14 @@
+p 目次
+h4 目次
 ul.article__index_headlines
-  - article.decorate.table_of_contents.each do |headlines|
-    li.article__index_headline
-      a href="#ebisu_paragraph_headline_#{headlines.first.id}"
-        = headlines.first.content
-    - if headlines.count > 1
+  - article.decorate.table_of_contents.each do |paragraph|
+    - if paragraph.is_a? Ebisu::Paragraph::Headline
+      li.article__index_headline
+        a href="#ebisu_paragraph_headline_#{paragraph.id}"
+          = paragraph.content
+    - elsif paragraph.is_a? Ebisu::Paragraph::Subheadline
       ul.article__index_subheadlines
-        - headlines[1..-1].each do |subheadline|
-          li.article__index_subheadline
-            a href="#ebisu_paragraph_subheadline_#{subheadline.id}"
-              = subheadline.content
+        li.article__index_subheadline
+          span &nbsp;&nbsp;
+          a href="#ebisu_paragraph_subheadline_#{paragraph.id}"
+            = paragraph.content

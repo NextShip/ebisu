@@ -37,12 +37,8 @@ class Ebisu::ArticleDecorator < Draper::Decorator
   end
 
   def table_of_contents
-    object.paragraphs.rank(:position).map do |paragraph|
-      if paragraph.is_a? Ebisu::Paragraph::Headline
-        [paragraph]
-      elsif paragraph.is_a? Ebisu::Paragraph::Subheadline
-        paragraph
-      end
-    end.compact
+    object.paragraphs.rank(:position).select do |paragraph|
+      paragraph.is_a?( Ebisu::Paragraph::Headline ) || paragraph.is_a?( Ebisu::Paragraph::Subheadline )
+    end
   end
 end
