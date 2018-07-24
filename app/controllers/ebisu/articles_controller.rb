@@ -15,15 +15,6 @@ module Ebisu
       authorize @article
       impressionist @article, nil, unique: [:session_hash]
 
-      @index = []
-      @article.paragraphs.rank(:position).each do |paragraph|
-        if paragraph.is_a? Ebisu::Paragraph::Headline
-          @index.push([paragraph])
-        elsif paragraph.is_a? Ebisu::Paragraph::Subheadline
-          @index.last.push(paragraph)
-        end
-      end
-
       category = @article.category
       add_breadcrumb "Top", articles_path
       add_breadcrumb category.parent.name, category_path(category.parent) if category.respond_to?(:parent) && category.parent.present?
