@@ -1,12 +1,5 @@
-- table_of_contents = article.paragraphs.rank(:position).map do |paragraph|
--   if paragraph.is_a? Ebisu::Paragraph::Headline
--     [paragraph]
--   elsif paragraph.is_a? Ebisu::Paragraph::Subheadline
--     paragraph
--   end
-- end
 ul.article__index_headlines
-  - table_of_contents.paragraphs.each do |headlines|
+  - article.table_of_contents.paragraphs.each do |headlines|
     li.article__index_headline
       a href="#ebisu_paragraph_headline_#{headlines.first.id}"
         = headlines.first.content

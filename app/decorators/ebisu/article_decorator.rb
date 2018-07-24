@@ -35,4 +35,14 @@ class Ebisu::ArticleDecorator < Draper::Decorator
       ga('send', 'pageview', '#{h.ebisu.article_path(object)}');" 
     end
   end
+
+  def table_of_contents
+    object.paragraphs.rank(:position).map do |paragraph|
+      if paragraph.is_a? Ebisu::Paragraph::Headline
+        [paragraph]
+      elsif paragraph.is_a? Ebisu::Paragraph::Subheadline
+        paragraph
+      end
+    end
+  end
 end
