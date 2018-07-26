@@ -1,5 +1,5 @@
 - if form.object.content_stored?
-  = image_tag form.object.content.url
+  = image_tag form.object.content.url, style: 'max-width: 415px;'
 - else
   = form.file_field :content, class: "form-control"
 .form-group
