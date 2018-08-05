@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency "kaminari"
   s.add_dependency "mime-types"
   s.add_dependency "pundit"
-  s.add_dependency "rails", "~> 5.1.3"
+  s.add_dependency "rails", "=> 5.1.3"
   s.add_dependency "ranked-model"
   s.add_dependency "rolify"
   s.add_dependency "ruby-oembed"
