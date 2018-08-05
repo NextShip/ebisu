@@ -2,11 +2,13 @@ doctype html
 html
   head
     = display_meta_tags default_meta_tags
+    = render 'shared/ebisu/tagmanager'
     = csrf_meta_tags
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag    'ebisu/application', media: 'all'
     = javascript_include_tag 'ebisu/application'
   body class=[controller_path.sub('/', '-'), action_name]
+    = render 'shared/ebisu/tagmanager_after_body'
     = render 'shared/ebisu/header'
     .main
       = yield
