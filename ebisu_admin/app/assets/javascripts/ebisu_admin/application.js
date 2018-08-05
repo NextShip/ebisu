@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require_tree .
-//= require gentelella
-//= require gentelella-custom
 //= require jquery-ui
+//= require jquery
+//= require bootstrap-sprockets
 //= require cocoon
