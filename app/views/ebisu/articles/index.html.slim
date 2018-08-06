@@ -1,37 +1,13 @@
-section.eyecatch
-  ol.eyecatch-in
-    - Ebisu::Article.toparticles.each do |article|
-      li
-        = link_to ebisu.article_path(article), style: "text-decoration: none;"
-          .eyecatch-content
-            .eyecatch__image style="background-image: url('#{article.image.url}');"
-            h3.eyecatch__title= article.title
-            .eyecatch__abst= article.abstract
-            .eyecatch-info
-              .eyecatch-user
-                | Ebisu
+section
+  // = render 'eyecatch'
 
-.contents-wrapper
-  aside.category
-    = render 'shared/ebisu/category'
-
-  section.article-list
-    h2.article-list__title
-      | Pick up
-    ol
-      - @articles.each do |article|
-        li
-          = link_to ebisu.article_path(article), style: "text-decoration: none;"
-            .article-list-item
-              = image_tag article.image.url, class: 'article-list-item__image'
-              .article-list-item-caption
-                h3.article-list-item__title
-                  = article.title
-                p.article-list-item__abst
-                  = article.abstract
-                / p.article-info
-                  =
+.ebisu__contents-wrapper
+  section.ebisu__main-section
+    h1= Ebisu.config.site_name
+    = render "shared/ebisu/article_list", articles: @articles
     = paginate @articles
 
-  aside.sidebar
-    = render "shared/ebisu/sidebar"
+  aside.ebisu__aside
+    h3 #{Ebisu.config.site_name}おすすめの記事
+    = render "shared/ebisu/sidebar", articles: Ebisu::Article.recommendations.take(10)
+  .ebisu__clear

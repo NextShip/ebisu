@@ -1,0 +1,9 @@
+.ebisu__contents-wrapper
+  ol
+    - Ebisu::Article.toparticles.each do |article|
+      li
+        = link_to ebisu.article_path(article), style: "text-decoration: none;"
+          .eyecatch-content
+            .eyecatch__image style="background-image: url('#{article.image.url}');"
+            h2.eyecatch__title= article.title
+            .eyecatch__abst= article.abstract

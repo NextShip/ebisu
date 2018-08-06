@@ -1,0 +1,16 @@
+.ebisu {
+  &__footer-wrapper {
+    padding: 50px;
+    background: $ebisu-dark-bg;
+  }
+  &__footer-list {
+    text-align: center;
+  }
+  &__footer-item {
+    display: inline-block;
+    margin: 0px 20px 16px 0px;
+    a {
+      color: $ebisu-white;
+    }
+  }
+} 

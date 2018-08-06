@@ -7,7 +7,7 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = stylesheet_link_tag    'ebisu/application', media: 'all'
     = javascript_include_tag 'ebisu/application'
-  body class=[controller_path.sub('/', '-'), action_name]
+  body class=[controller_path.sub('/', '-'), action_name, 'ebisu']
     = render 'shared/ebisu/tagmanager_after_body'
     = render 'shared/ebisu/header'
     .main

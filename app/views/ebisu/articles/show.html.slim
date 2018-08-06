@@ -1,19 +1,13 @@
 = render_breadcrumbs builder: Ebisu::BreadcrumbsBuilder
 
-.contents-wrapper
-  section.article
-  	.centering = image_tag @article.image.url, class: "article__image"
-    h1.article__title =@article.title
-    p.article__user =@article.user.email
-    p.article__abst =@article.category.name
-    p.article__abst =@article.abstract
-    p =@article.impressionist_count
-    p =@article.decorate.legible_required_reading_time
-
+.ebisu__contents-wrapper
+  section.ebisu__main-section
+  	= image_tag @article.image.url, class: "article__image"
+    = render 'article_abstract', article: @article
     = render 'table_of_contents', article: @article
     = render 'article_body', article: @article
 
-  aside.sidebar
-    = render 'shared/ebisu/sidebar'
-
-.clearfix
+  aside.ebisu__aside
+    h3 #{Ebisu.config.site_name}おすすめの記事
+    = render "shared/ebisu/sidebar", articles: Ebisu::Article.recommendations.take(10)
+  .ebisu__clear

@@ -9,6 +9,10 @@ module Ebisu
     config_accessor :rss_feed_description
     config_accessor :logo_url
     config_accessor :google_analytics_id
+    config_accessor :site_name
+    config_accessor :site_title
+    config_accessor :site_description
+    config_accessor :logo_path
   end
   
   def self.configure(&block)

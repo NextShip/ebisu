@@ -1,0 +1,48 @@
+.ebisu {
+   &__article {
+     &-list {
+       padding: 0;
+     }
+     &-item {
+       display: flex;
+       padding: 10px 0;
+       height: 100px;
+       border-bottom: 1px solid $ebisu-border;
+     }
+     &-link {
+       text-decoration: none;
+     }
+     &-image {
+       display: inline-block;
+       width: 75px;
+       height: 75px;
+       vertical-align: middle;
+     }
+     &-caption {
+       display: inline-block;
+       width: calc(100% - 75px);
+       vertical-align: middle;
+       padding-left: 10px;
+     }
+     &-title {
+       margin: 0;
+       height: 25px;
+       font-size: 16px;
+       font-weight: 700;
+       border-bottom: 1px dotted #eee;
+       margin-bottom: 6px;
+       overflow: hidden;
+       display: -webkit-box;
+       -webkit-box-orient: vertical;
+       -webkit-line-clamp: 1;
+     }
+     &-abst {
+       margin: 0;
+       height: 55px;
+       font-size: 11px;
+       color: $ebisu-description-text;
+       overflow: hidden;
+       text-overflow: ellipsis;
+     }
+   }
+}

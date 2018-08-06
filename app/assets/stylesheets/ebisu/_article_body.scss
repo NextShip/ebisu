@@ -1,0 +1,15 @@
+.ebisu {
+  figure {
+    margin: 0;
+  }
+  &__headline {
+    border-bottom: 3px solid $ebisu-main-color;
+    padding: 3px 0 3px 5px;
+  }
+  &__subheadline {
+    border-left: 3px solid $ebisu-main-color;
+    margin-left: 8px;
+    padding: 3px 0 3px 8px;
+  }
+}
+

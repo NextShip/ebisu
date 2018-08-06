@@ -1,8 +1,1 @@
-.sidebar-title-wrapper
-  h2.sidebar-title sidebar title
-  p.sidebar-subtitle subtitle
-ul.sidebar-articles
-  - Ebisu::Article.recommendations.each do |article|
-    li
-      = link_to ebisu.article_path(article) do
-        = render_article_panel article
+= render 'shared/ebisu/article_list', articles: articles
