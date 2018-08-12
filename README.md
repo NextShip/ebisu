@@ -5,6 +5,16 @@ Short description and motivation.
 How to use my plugin.
 
 ## Installation
+### 0. requirements
+```
+gem 'devise'
+gem 'pundit'
+
+Userモデルがあることを前提にしているためUserがない場合
+rails g devise User
+```
+
+### 1. install
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -16,10 +26,32 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install ebisu
+### 2. install migrations
 ```
+bundle exec rails ebisu:install:migrations
+```
+
+### 3. Add routing
+```
+mount Ebisu::Engine => '/'
+localhost:3000/articles
+に記事の一覧が表示出来るようになる
+```
+
+### 4. add role to User
+```
+rails c
+$ user = User.create(~~~~~~)
+$ user.add_role(:admin)
+localhost:3000/ebisu_admin
+に管理画面が表示出来る
+
+第三者に記事用アカウントを発行する場合は
+$ user.add_role(:writer)
+localhost:3000/ebisu_admin
+にアクセスで違う管理画面が表示出来る
+```
+
 
 ## Contributing
 Contribution directions go here.
