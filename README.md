@@ -8,7 +8,6 @@ How to use my plugin.
 ### 0. requirements
 ```
 gem 'devise'
-gem 'pundit'
 
 Userモデルがあることを前提にしているためUserがない場合
 rails g devise User
@@ -29,6 +28,7 @@ $ bundle
 ### 2. install migrations
 ```
 bundle exec rails ebisu:install:migrations
+bundle exec rails db:migrate
 ```
 
 ### 3. Add routing
@@ -50,6 +50,19 @@ localhost:3000/ebisu_admin
 $ user.add_role(:writer)
 localhost:3000/ebisu_admin
 にアクセスで違う管理画面が表示出来る
+```
+
+### 5. ロゴの設定
+```
+assets内のロゴの名前の
+logo.pngにするか
+
+またはinitializerにebisu.rbのロゴをを作成する
+https://github.com/NextShip/ebisu/blob/master/config/initializers/ebisu.rb
+
+Ebisu.configure do |config|
+  config.logo_url = 'https://ebisu.ico/NextShip/ebisu.png'
+end
 ```
 
 
