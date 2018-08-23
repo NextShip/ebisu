@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "ransack"
   # s.add_dependency "gentelella-rails"
   s.add_dependency 'jquery-rails'
-  s.add_dependency 'bootstrap-sass', '~> 3.3.7'
+  # s.add_dependency 'bootstrap'
   s.add_dependency "jquery-ui-rails"
 
   s.add_development_dependency "sqlite3"

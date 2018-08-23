@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ebisu (0.8.47)
+    ebisu (0.8.48)
       breadcrumbs_on_rails
       browser
       cocoon
@@ -26,7 +26,6 @@ PATH
   remote: ebisu_admin
   specs:
     ebisu_admin (0.3.4)
-      bootstrap-sass (~> 3.3.7)
       jquery-rails
       jquery-ui-rails
       kaminari
@@ -85,12 +84,7 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
-    autoprefixer-rails (9.1.0)
-      execjs
     bcrypt (3.1.12)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     breadcrumbs_on_rails (3.0.1)
     browser (2.5.3)
     builder (3.2.3)
@@ -118,7 +112,6 @@ GEM
       request_store (~> 1.0)
     erubi (1.7.1)
     excon (0.62.0)
-    execjs (2.7.0)
     ffi (1.9.25)
     fog-aws (3.0.0)
       fog-core (~> 2.1)
