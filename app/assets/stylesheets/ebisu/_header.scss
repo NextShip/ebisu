@@ -3,9 +3,11 @@
     border-bottom: $ebisu-border solid 1px;
   }
   font-family: -apple-system, 'BlinkMacSystemFont', Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3";
-  &__image-wrapper {
+  &__header-image-wrapper {
     padding-top: 20px;
     padding-bottom: 5px;
+  }
+  &__header-image {
   }
 
   &__gnav {

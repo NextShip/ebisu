@@ -1,8 +1,8 @@
 header
   .ebisu__header-wrapper
     .ebisu__contents-wrapper
-      .ebisu__image-wrapper
-        = image_tag "#{Ebisu.config.logo_path}"
+      .ebisu__header-image-wrapper
+        = image_tag "#{Ebisu.config.logo_path}", class: 'ebisu__header-image'
     nav.ebisu__gnav
       ul
         - Ebisu::Category.all.each do |category|
