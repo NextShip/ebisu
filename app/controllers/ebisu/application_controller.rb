@@ -1,5 +1,6 @@
 module Ebisu
   class ApplicationController < ActionController::Base
+    http_basic_authenticate_with name: "ebisu", password: "ebisu" unless Rails.env.production? 
     include Pundit
     protect_from_forgery with: :exception
     before_action :set_view_variant
