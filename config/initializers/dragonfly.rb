@@ -16,7 +16,8 @@ Dragonfly.app.configure do
       bucket_name: ENV['EBISU_AWS_BUCKET_NAME'],
       access_key_id: ENV['EBISU_AWS_ACCESS_KEY_ID'], 
       secret_access_key: ENV['EBISU_AWS_SECRET_ACCESS_KEY'],
-      region: ENV['EBISU_AWS_REGION']
+      region: ENV['EBISU_AWS_REGION'],
+      url_scheme: 'https'
   else
     datastore :file,
       root_path: Rails.root.join('public/system/dragonfly', Rails.env),
