@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  *= require jquery-ui
+ *= require select2
+ *= require select2-bootstrap
+ *= require font-awesome
  */
+ 
 @import "gentelella-custom";
+@import "bootstrap";
 
 body {
   .left_col {

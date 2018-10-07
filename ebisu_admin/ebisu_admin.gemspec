@@ -20,10 +20,10 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", ">= 5.1.4"
   s.add_dependency "rails-i18n"
   s.add_dependency "ransack"
-  # s.add_dependency "gentelella-rails"
   s.add_dependency 'jquery-rails'
-  # s.add_dependency 'bootstrap'
   s.add_dependency "jquery-ui-rails"
+  s.add_dependency "select2-rails"
+  s.add_dependency "font-awesome-rails"
 
   s.add_development_dependency "sqlite3"
 end
