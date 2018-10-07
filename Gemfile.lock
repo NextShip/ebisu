@@ -25,7 +25,7 @@ PATH
 PATH
   remote: ebisu_admin
   specs:
-    ebisu_admin (0.3.4)
+    ebisu_admin (0.4.0)
       font-awesome-rails
       jquery-rails
       jquery-ui-rails
