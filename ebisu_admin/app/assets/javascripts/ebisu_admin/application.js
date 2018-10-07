@@ -10,7 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
-//= require jquery-ui
 //= require jquery
+//= require jquery_ujs
+//= require jquery-ui
 //= require cocoon
+//= require ebisu_admin/bootstrap-3.3.7.min.js
+//= require select2

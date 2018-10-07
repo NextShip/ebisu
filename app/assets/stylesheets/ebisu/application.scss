@@ -11,8 +11,8 @@
  * It is generally better to create a new file per style scope.
  *= require_self
  */
-@import 'sanitize';
-@import 'variables';
+@import 'partials/sanitize';
+@import 'partials/variables';
 @media(max-width: 415px) {
   .ebisu {
     &__contents-wrapper {
@@ -43,7 +43,7 @@
     }
   }
 }
-@import 'footer';
-@import 'header';
-@import 'article_list';
-@import 'article_body';
+@import 'partials/footer';
+@import 'partials/header';
+@import 'partials/article_list';
+@import 'partials/article_body';
