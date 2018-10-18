@@ -2,5 +2,5 @@ li.ebisu__article-item
   = link_to ebisu.article_path(article), class: 'ebisu__article-link' do
     = image_tag article.image.thumb('75x75#').url, class: 'ebisu__article-image'
     .ebisu__article-caption
-      .ebisu__article-title= article.title
+      h2.ebisu__article-title= article.title
       p.ebisu__article-abst= article.abstract
