@@ -6,6 +6,6 @@
 
   aside.ebisu__aside
     h2 #{Ebisu.config.site_name}おすすめの記事
-    = render "ebisu/shared/sidebar", articles: Ebisu::Article.recommendations.take(10)
+    = render "ebisu/shared/sidebar", articles: Ebisu::Article.recommendations.take(5)
     = render 'ebisu/shared/categories', categories: Ebisu::Category.all
   .ebisu__clear
