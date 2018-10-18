@@ -4,10 +4,11 @@ section
 .ebisu__contents-wrapper
   section.ebisu__main-section
     h1= Ebisu.config.site_name
-    = render "shared/ebisu/article_list", articles: @articles
+    = render "ebisu/shared/article_list", articles: @articles
     = paginate @articles
 
   aside.ebisu__aside
     h3 #{Ebisu.config.site_name}おすすめの記事
-    = render "shared/ebisu/sidebar", articles: Ebisu::Article.recommendations.take(10)
+    = render "ebisu/shared/sidebar", articles: Ebisu::Article.recommendations.take(10)
+    = render 'ebisu/shared/categories', categories: Ebisu::Category.all
   .ebisu__clear

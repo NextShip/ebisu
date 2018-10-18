@@ -1,7 +1,7 @@
 module Ebisu
   class BreadcrumbsBuilder < BreadcrumbsOnRails::Breadcrumbs::Builder
     def render
-      @context.render "/shared/ebisu/breadcrumbs", elements: @elements
+      @context.render "/ebisu/shared/breadcrumbs", elements: @elements
     end
   end
 end
