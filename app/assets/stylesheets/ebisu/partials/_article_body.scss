@@ -1,6 +1,10 @@
 .ebisu {
-  figure {
+  &__article_figure {
     margin: 0;
+  }
+  &__article_image {
+    width: 100%;
+    padding: 0 0 20px 0;
   }
   &__headline {
     border-bottom: 3px solid $ebisu-main-color;
