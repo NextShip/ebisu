@@ -12,6 +12,6 @@ Ebisu::Engine.routes.draw do
   resources :articles, only: [:index, :show]
   resources :categories, only: [:show]
   %w(terms privacy_policy inquiry ad_listing).each do |path|
-    get "#{path}", to: "statics##{path}"
+    get "/statics/#{path}", to: "statics##{path}"
   end
 end

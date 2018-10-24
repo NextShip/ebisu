@@ -8,5 +8,5 @@ header
         - Ebisu::Category.all.each do |category|
           li= link_to category_path(category) do
             span #{category.name}
-        li= link_to inquiry_path do
+        li= link_to statics_inquiry_path do
           span お問い合わせ
