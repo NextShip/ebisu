@@ -10,5 +10,13 @@ module EbisuAdmin
     def writer?
       user && user.has_role?(:writer)
     end
+
+    def admin?
+      user && user.has_role?(:admin)
+    end
+
+    def writer_or_admin? 
+      user && (user.has_role?(:writer) || user.has_role?(:admin))
+    end
   end
 end

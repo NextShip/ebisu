@@ -1,7 +1,7 @@
 module Ebisu
   class ArticlePolicy < ApplicationPolicy
     def new?
-      writer?
+      writer? || admin?
     end
 
     def create?

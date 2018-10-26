@@ -6,7 +6,7 @@ module EbisuAdmin
     rescue_from Pundit::NotAuthorizedError, with: :redirect_to_404
 
     def authenticate_writer!
-      authorize [:ebisu_admin, :application], :writer?
+      authorize [:ebisu_admin, :application], :writer_or_admin?
     end
 
     def redirect_to_404
