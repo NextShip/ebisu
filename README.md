@@ -8,9 +8,11 @@ How to use my plugin.
 ### 0. requirements
 ```
 gem 'devise'
+gem 'rolify'
 
 Userモデルがあることを前提にしているためUserがない場合
 rails g devise User
+rails g rolify Role User
 ```
 
 ### 1. install
