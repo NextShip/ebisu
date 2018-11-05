@@ -1,3 +1,3 @@
 module Ebisu
-  VERSION = '0.8.61'
+  VERSION = '0.8.62'
 end
