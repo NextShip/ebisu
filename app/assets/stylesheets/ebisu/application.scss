@@ -13,6 +13,7 @@
  */
 @import 'partials/sanitize';
 @import 'partials/variables';
+@import 'custom';
 @media(max-width: 415px) {
   .ebisu {
     &__contents-wrapper {
@@ -47,4 +48,3 @@
 @import 'partials/header';
 @import 'partials/article_list';
 @import 'partials/article_body';
-@import 'custom';
