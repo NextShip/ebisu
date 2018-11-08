@@ -1,0 +1,30 @@
+@media(max-width: 415px) {
+  .ebisu {
+    &__contents-wrapper {
+      margin: 0 10px;
+    }
+  }
+}
+@media(max-width: 767px) and (min-width: 416px) {
+}
+@media(max-width: 1024px) and (min-width: 768px) {
+}
+@media(min-width: 1024px) {
+  .ebisu {
+    &__contents-wrapper {
+      margin: 0 calc((100% - 1120px)/2) 0;
+    }
+    &__main-section {
+      width: 770px;
+      margin-right: 20px;
+      float: left;
+    }
+    &__aside {
+      width: 310px;
+      float: right;
+    }
+    &__clear {
+      clear: both;
+    }
+  }
+}
