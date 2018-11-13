@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ebisu (0.8.60)
+    ebisu (0.8.64)
       breadcrumbs_on_rails
       browser
       cocoon
@@ -90,7 +90,7 @@ GEM
     breadcrumbs_on_rails (3.0.1)
     browser (2.5.3)
     builder (3.2.3)
-    cocoon (1.2.11)
+    cocoon (1.2.12)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     devise (4.5.0)
@@ -232,7 +232,7 @@ GEM
       railties (>= 4.2.0, < 5.3)
     rolify (5.2.0)
     ruby-oembed (0.12.0)
-    sass (3.6.0)
+    sass (3.7.1)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)

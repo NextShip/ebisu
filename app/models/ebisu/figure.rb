@@ -1,6 +1,6 @@
 module Ebisu
   class Figure < ApplicationRecord
-  	dragonfly_accessor :content
+  	dragonfly_accessor :content, app: :ebisu
   	
     # associations
     belongs_to :paragraph, foreign_key: :paragraph_id, optional: true

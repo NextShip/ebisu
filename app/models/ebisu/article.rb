@@ -4,7 +4,7 @@ module Ebisu
     is_impressionable counter_cache: true
 
     # associations
-    dragonfly_accessor :image do
+    dragonfly_accessor :image, app: :ebisu  do
       default '/public/images/no-image.jpg'
     end
     has_many :paragraphs, dependent: :destroy

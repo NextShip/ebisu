@@ -2,7 +2,7 @@ require 'dragonfly'
 require 'dragonfly/s3_data_store'
 
 # Configure
-Dragonfly.app.configure do
+Dragonfly.app(:ebisu).configure do
   plugin :imagemagick
   verify_urls true
   secret "f0f29ee054b86a6b2abcd526a057d8b1432bf2a89c7ba62caab4446b05de050a"
@@ -51,7 +51,7 @@ end
 Dragonfly.logger = Rails.logger
 
 # Mount as middleware
-Rails.application.middleware.use Dragonfly::Middleware
+Rails.application.middleware.use Dragonfly::Middleware, :ebisu
 
 # Add model functionality
 if defined?(ActiveRecord::Base)
