@@ -6,7 +6,7 @@ Dragonfly.app(:ebisu).configure do
   plugin :imagemagick
   verify_urls true
   secret "f0f29ee054b86a6b2abcd526a057d8b1432bf2a89c7ba62caab4446b05de050a"
-  url_format "/media/:job/:name"
+  url_format "/ebisu/:job/:name"
 
   if ENV['EBISU_AWS_BUCKET_NAME']
     response_header 'Cache-Control' do |job, request, headers|    # either directly or with a block
