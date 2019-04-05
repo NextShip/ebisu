@@ -102,5 +102,9 @@ ebisuの各viewを上書きした場合以下の行を書くことでebisuのcon
 5. `Ebisu::Paragraph::***Decorator` を定義する
 6. ebisu_admin/app/views/ebisu/paragraph以下に要素作成用のformを追加する
 
+## TAG
+EBISU_TAGMANAGER=タグマネージャーのID
+を.envなどに追加する
+
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
