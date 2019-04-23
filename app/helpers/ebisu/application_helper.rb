@@ -2,11 +2,11 @@ module Ebisu
   module ApplicationHelper
     def default_meta_tags
       {
-        site: 'Ebisu',
+        site: Ebisu.config.site_name,
         separator: '|',
-        title: 'Ebisu',
+        title: Ebisu.config.site_title,
         reverse: true,
-        description: 'This is Media',
+        description: Ebisu.config.site_description,
         og: {
           title: :title,
           description: :description,
