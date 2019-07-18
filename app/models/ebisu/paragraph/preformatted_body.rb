@@ -1,5 +1,5 @@
 module Ebisu
-  class Paragraph::PreformattedBody < Ebisu::Paragraph
+  class Paragraph::PreformattedBody < Paragraph
     has_one :delegate, class_name: 'Ebisu::PreformattedBody', foreign_key: 'paragraph_id', dependent: :destroy
     delegate :content, to: :delegate, allow_nil: true
     

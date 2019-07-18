@@ -37,7 +37,7 @@ module Ebisu
 
     def self.template_article
       self.new do |article|
-        Ebisu::Paragraph::SUBCLASSES.each do |klass|
+        Paragraph::SUBCLASSES.each do |klass|
           article.paragraphs.build(type: klass.to_s, delegate_attributes: {})
         end
       end

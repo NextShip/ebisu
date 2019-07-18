@@ -8,6 +8,7 @@ test/dummy/db/schema.rb
 test/dummy/log/*.log
 test/dummy/tmp/
 test/dummy/public/system/*
+test/dummy/public/assets/*
 *.DS_Store
 *.swo
 *.swp

@@ -19,6 +19,7 @@ module Ebisu
       Ebisu::Paragraph::Figure
       Ebisu::Paragraph::Quotation
       Ebisu::Paragraph::PreformattedBody
+      Ebisu::Paragraph::ImageButton
       Ebisu::Paragraph::Tweet
       Ebisu::Paragraph::Youtube
       Ebisu::Paragraph::ExternalLink

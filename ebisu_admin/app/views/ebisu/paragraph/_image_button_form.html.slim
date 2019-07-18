@@ -1,0 +1,10 @@
+- if form.object.content_stored?
+  = image_tag form.object.content.url, style: 'max-width: 415px;'
+- else
+  = form.file_field :content, class: "form-control"
+.form-group
+  = form.label :link_to, t('ebisu.activerecord.attributes.image_button.link_to')
+  = form.text_field :link_to, class: "form-control"
+.form-group
+  = form.label :alt, t('ebisu.activerecord.attributes.image_button.alt')
+  = form.text_field :alt, class: "form-control"
