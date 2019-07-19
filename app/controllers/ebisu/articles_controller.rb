@@ -21,7 +21,8 @@ module Ebisu
       add_breadcrumb category.name, category_path(@article.category) if category
       add_breadcrumb @article.title
 
-      set_meta_tags title: @article.title, description: @article.abstract
+      set_meta_tags title: @article.title, description: @article.abstract, 
+        twitter: { card: 'summary', title: @article.title, description: @article.abstract, image: @article.image.thumb('780x').url }
     end
   end
 end
