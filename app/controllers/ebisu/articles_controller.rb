@@ -22,7 +22,7 @@ module Ebisu
       add_breadcrumb @article.title
 
       set_meta_tags title: @article.title, description: @article.abstract, 
-        twitter: { card: 'summary', title: @article.title, description: @article.abstract, image: @article.image.thumb('780x').url }
+        twitter: { card: 'summary_large_image', title: @article.title, description: @article.abstract, image: @article.image.thumb('780x').url }
     end
   end
 end
