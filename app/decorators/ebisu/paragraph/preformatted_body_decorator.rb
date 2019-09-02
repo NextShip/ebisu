@@ -3,7 +3,7 @@ class Ebisu::Paragraph::PreformattedBodyDecorator < Ebisu::ParagraphDecorator
 
   def content
 
-    h.content_tag(:p, object.html_safe, { class: "article__text" })
+    h.content_tag(:p, object.content.html_safe, { class: "article__text" })
   end
 
   def required_reading_time
