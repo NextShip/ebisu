@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "browser"
   s.add_dependency "cocoon"
   s.add_dependency "devise"
-  s.add_dependency "dragonfly", "~> 1.1.3"
+  s.add_dependency "dragonfly", ">= 1.1.3", "< 1.5.0"
   s.add_dependency "dragonfly-s3_data_store"
   s.add_dependency "draper"
   s.add_dependency "ebisu_admin"
